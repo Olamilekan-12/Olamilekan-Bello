@@ -57,43 +57,59 @@ export function Newsletter() {
   };
 
   return (
-    <div className="mt-8">
+    <motion.div 
+      className="w-full"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+    >
       <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
         Newsletter
       </h3>
-      <p className="text-muted-foreground text-sm mb-4">
-        Subscribe to get updates on my latest projects and articles.
+      <p className="text-muted-foreground text-sm mb-6">
+        Get updates on my latest projects and articles. No spam, unsubscribe anytime.
       </p>
-      <form onSubmit={handleSubmit} className="space-y-3">
-        <div>
-          <label htmlFor="email" className="sr-only">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="relative">
+          <label htmlFor="email-newsletter" className="sr-only">
             Email address
           </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            className="w-full px-4 py-2 border border-border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-            disabled={isSubmitting}
-            required
-          />
+          <div className="relative">
+            <input
+              id="email-newsletter"
+              name="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email address"
+              className="w-full pl-4 pr-32 py-3 border border-border rounded-lg bg-background/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all duration-200"
+              disabled={isSubmitting}
+              required
+            />
+            <motion.button
+              type="submit"
+              className="absolute right-1 top-1/2 -translate-y-1/2 bg-primary text-primary-foreground hover:bg-primary/90 py-2 px-4 rounded-md text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed mr-1"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <span className="flex items-center">
+                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Sending...
+                </span>
+              ) : 'Subscribe'}
+            </motion.button>
+          </div>
         </div>
-        <motion.button
-          type="submit"
-          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-2 px-4 rounded-md font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Subscribing...' : 'Subscribe'}
-        </motion.button>
+        <p className="text-xs text-muted-foreground/70 text-center">
+          Join my newsletter for exclusive content and updates
+        </p>
       </form>
-      <p className="text-xs text-muted-foreground mt-2">
-        No spam, unsubscribe at any time.
-      </p>
-    </div>
+    </motion.div>
   );
 }
