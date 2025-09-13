@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Cpu, Database, Smartphone, CpuIcon, Server, GitBranch, Layers } from 'lucide-react';
+import { Code, Cpu, Database, Smartphone, CpuIcon, Server, GitBranch, Layers, Cloud } from 'lucide-react';
 
 const skills = [
   {
@@ -17,39 +17,39 @@ const skills = [
     ],
   },
   {
-    category: 'Backend',
+    category: 'Backend & Systems',
     icon: <Server className="h-6 w-6 text-primary" />,
     items: [
-      { name: 'Node.js', level: 85 },
-      { name: 'Express', level: 80 },
-      { name: 'RESTful APIs', level: 85 },
-      { name: 'GraphQL', level: 75 },
-      { name: 'Authentication', level: 85 },
-      { name: 'WebSockets', level: 75 },
+      { name: 'Node.js', level: 90 },
+      { name: 'Go (Golang)', level: 85 },
+      { name: 'RESTful APIs', level: 90 },
+      { name: 'System Design', level: 90 },
+      { name: 'Microservices', level: 85 },
+      { name: 'Distributed Systems', level: 85 },
     ],
   },
   {
-    category: 'Database',
+    category: 'Cloud & DevOps',
+    icon: <Cloud className="h-6 w-6 text-primary" />,
+    items: [
+      { name: 'AWS', level: 85 },
+      { name: 'Docker', level: 90 },
+      { name: 'Kubernetes', level: 85 },
+      { name: 'CI/CD Pipelines', level: 90 },
+      { name: 'Terraform', level: 80 },
+      { name: 'Serverless', level: 85 },
+    ],
+  },
+  {
+    category: 'Database & Storage',
     icon: <Database className="h-6 w-6 text-primary" />,
     items: [
-      { name: 'MongoDB', level: 85 },
-      { name: 'PostgreSQL', level: 75 },
-      { name: 'Redis', level: 70 },
-      { name: 'Firebase', level: 75 },
-      { name: 'Prisma', level: 80 },
-      { name: 'Mongoose', level: 85 },
-    ],
-  },
-  {
-    category: 'DevOps & Tools',
-    icon: <GitBranch className="h-6 w-6 text-primary" />,
-    items: [
-      { name: 'Git & GitHub', level: 90 },
-      { name: 'Docker', level: 75 },
-      { name: 'AWS', level: 70 },
-      { name: 'CI/CD', level: 75 },
-      { name: 'Jest', level: 80 },
-      { name: 'Webpack', level: 75 },
+      { name: 'MongoDB', level: 90 },
+      { name: 'PostgreSQL', level: 85 },
+      { name: 'DynamoDB', level: 85 },
+      { name: 'Redis', level: 85 },
+      { name: 'Elasticsearch', level: 75 },
+      { name: 'Message Queues', level: 85 },
     ],
   },
 ];
@@ -73,8 +73,7 @@ export function Skills() {
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            I&apos;ve worked with a variety of technologies in the web development world.
-            Here are the tools and technologies I&apos;m most proficient in.
+            I specialize in building scalable, high-performance systems with expertise in distributed systems, cloud architecture, and container orchestration. Here are the technologies I excel at.
           </p>
         </motion.div>
 
