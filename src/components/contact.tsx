@@ -49,11 +49,19 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Replace with your form submission logic
-      // Example: await submitForm(formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
       
       toast({
         title: 'Message Sent!',
@@ -68,9 +76,11 @@ export function Contact() {
       });
     } catch (error: unknown) {
       console.error('Error submitting form:', error);
+      const errorMessage = error instanceof Error ? error.message : 'There was an error sending your message.';
+      
       toast({
         title: 'Error',
-        description: 'There was an error sending your message. Please try again later.',
+        description: errorMessage,
         variant: 'destructive',
       });
     } finally {
