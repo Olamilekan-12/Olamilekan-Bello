@@ -132,7 +132,7 @@ export function Projects() {
             Interested in seeing more of my work?
           </p>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Olamilekan-12"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors font-medium"
