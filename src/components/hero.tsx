@@ -15,11 +15,10 @@ export function Hero() {
       title: 'Downloading Resume',
       description: 'Your resume will start downloading shortly.',
     });
-    
     // Simulate download
     setTimeout(() => {
       const link = document.createElement('a');
-      link.href = '#'; // Replace with your resume URL
+      link.href = '/bello_olamilekan_software_eng.pdf';
       link.download = 'Bello_Olamilekan_Resume.pdf';
       document.body.appendChild(link);
       link.click();
@@ -49,14 +48,19 @@ export function Hero() {
             </span>
           </motion.div>
           
-          <motion.h1 
+          <motion.div 
             className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Hi, I&apos;m <span className="text-primary">Bello Olamilekan</span>
-          </motion.h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+              Hi, I&apos;m <span className="text-primary">Bello Olamilekan</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Fullstack Software Engineer | Cloud & DevOps Enthusiast | Building Scalable Systems
+            </p>
+          </motion.div>
           
           <motion.p 
             className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto"

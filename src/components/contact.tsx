@@ -10,8 +10,8 @@ const ContactInfo = [
   {
     icon: <Mail className="h-6 w-6 text-primary" />,
     title: 'Email Me',
-    description: 'bello.olakay@example.com',
-    link: 'mailto:bello.olakay@example.com',
+    description: 'belloolamilekan661@gmail.com',
+    link: 'mailto:belloolamilekan661@gmail.com',
   },
   {
     icon: <MapPin className="h-6 w-6 text-primary" />,
@@ -22,8 +22,8 @@ const ContactInfo = [
   {
     icon: <Phone className="h-6 w-6 text-primary" />,
     title: 'Call Me',
-    description: '+234 800 000 0000',
-    link: 'tel:+2348000000000',
+    description: '+234 704 785 5298',
+    link: 'tel:+2347047855298',
   },
 ];
 
@@ -66,7 +66,8 @@ export function Contact() {
         email: '',
         message: '',
       });
-    } catch (error) {
+    } catch (error: unknown) {
+      console.error('Error submitting form:', error);
       toast({
         title: 'Error',
         description: 'There was an error sending your message. Please try again later.',

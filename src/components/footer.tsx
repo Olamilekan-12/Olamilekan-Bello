@@ -7,22 +7,22 @@ import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 const socialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com/yourusername',
+    url: 'https://github.com/Olamilekan-12',
     icon: <Github className="h-5 w-5" />,
   },
   {
     name: 'Twitter',
-    url: 'https://twitter.com/yourusername',
+    url: 'https://x.com/KingKong121211',
     icon: <Twitter className="h-5 w-5" />,
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/yourusername',
+    url: 'https://www.linkedin.com/in/olamilekan-bello-3810b6275/',
     icon: <Linkedin className="h-5 w-5" />,
   },
   {
     name: 'Email',
-    url: 'mailto:bello.olakay@example.com',
+    url: 'mailto:belloolamilekan661@gmail.com',
     icon: <Mail className="h-5 w-5" />,
   },
 ];
