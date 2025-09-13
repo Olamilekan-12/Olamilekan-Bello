@@ -113,6 +113,7 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             &copy; {currentYear} Bello Olamilekan. All rights reserved.
           </p>
+       
         </div>
       </div>
     </footer>
