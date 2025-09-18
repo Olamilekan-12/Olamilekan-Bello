@@ -2,40 +2,43 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import Image from 'next/image';
 
 const projects = [
   {
-    title: 'Project Atlas',
-    description: 'An eCommerce platform with user authentication, shopping cart, and payment integration.',
-    technologies: ['Next.js', 'Node.js', 'MongoDB', 'Stripe API'],
+    title: 'Paydeet',
+    description: 'Streamlined Payment Process And Total Control Over Transactions',
+    technologies: ['Next.js', 'Node.js', 'MongoDB', 'Flutterwave'],
     github: '#',
-    demo: '#',
-    image: '/project-atlas.jpg',
+    demo: 'https://dev-staging.d2mjatc7mjgnas.amplifyapp.com/',
+    image: '/images/paydeet.png',
   },
   {
-    title: 'EduLearn LMS',
-    description: 'A learning management system with course enrollment, video hosting, and progress tracking.',
-    technologies: ['Next.js', 'Express.js', 'Cloudinary', 'MongoDB'],
+    title: 'send24',
+    description: 'Embark on a low cost shipping experience with our hub services',
+    technologies: ['Next.js (Web)', 'Swift UI (APP)', 'Laravel', 'SQL'],
     github: '#',
-    demo: '#',
-    image: '/edulearn-lms.jpg',
+    demo: 'https://send24.co/',
+    image: '/images/send24.png',
   },
   {
-    title: 'ChatterBox',
-    description: 'A real-time chat application supporting private and group messaging.',
-    technologies: ['Next.js', 'Socket.io', 'Node.js', 'MongoDB'],
+    title: 'Micro Influx',
+    description: 'Your Gateway to Influencer Marketing Success',
+    technologies: ['NextJS', "Stripe", "SQL","Python"],
     github: '#',
-    demo: '#',
-    image: '/chatterbox.jpg',
+    demo: 'https://staging.d21q4gz1x551q.amplifyapp.com/',
+    image: '/images/micro-influx.png',
   },
+ 
   {
-    title: 'TaskFlow',
-    description: 'A project management tool with Kanban boards, team collaboration, and notifications.',
-    technologies: ['React', 'Express', 'PostgreSQL', 'WebSockets'],
+    title: 'BarelyHuman',
+    description: 'Shop your best gym outfit to chase better, not perfect.',
+    technologies: ['Shopify', "Apple Pay", "Google Pay","Shop Pay"],
     github: '#',
-    demo: '#',
-    image: '/taskflow.jpg',
+    demo: 'https://www.barelyhuman.com/',
+    image: '/images/barelyhuman.png',
   },
+
 ];
 
 export function Projects() {
@@ -72,12 +75,13 @@ export function Projects() {
               className="bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="h-48 bg-muted/30 relative overflow-hidden">
+                <Image 
+                  src={project.image} 
+                  alt={`${project.title} preview`} 
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-50"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-muted-foreground/50 text-sm">
-                    Project Preview
-                  </span>
-                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-foreground mb-2">
