@@ -6,12 +6,20 @@ import Image from 'next/image';
 
 const projects = [
   {
-    title: 'Paydeet',
-    description: 'Streamlined Payment Process And Total Control Over Transactions',
-    technologies: ['Next.js', 'Node.js', 'MongoDB', 'Flutterwave'],
+    title: 'Fazn',
+    description: 'Your complete digital solution partner',
+    technologies: ['Next.js', 'GSAP', 'Three.js', 'Tailwind CSS'],
+    github: 'https://github.com/Olamilekan-12/fazn',
+    demo: 'https://fazn.vercel.app/',
+    image: '/images/fazn.png',
+  },
+    {
+    title: 'Avant One',
+    description: 'One Platform. Endless Potential.',
+    technologies: ['ReactJS', "Supabase", "PostgreSQL","Shadcn UI"],
     github: '#',
-    demo: 'https://dev-staging.d2mjatc7mjgnas.amplifyapp.com/',
-    image: '/images/paydeet.png',
+    demo: 'https://app.avantone.io/',
+    image: '/images/avantone.png',
   },
   {
     title: 'send24',
@@ -22,22 +30,15 @@ const projects = [
     image: '/images/send24.png',
   },
   {
-    title: 'Micro Influx',
-    description: 'Your Gateway to Influencer Marketing Success',
+    title: 'Lex Legal',
+    description: 'Your Gateway to Legal Services',
     technologies: ['NextJS', "Stripe", "SQL","Python"],
-    github: '#',
-    demo: 'https://staging.d21q4gz1x551q.amplifyapp.com/',
-    image: '/images/micro-influx.png',
+    github: 'https://github.com/Olamilekan-12/lex-legal',
+    demo: 'https://lex-legal-brown.vercel.app/',
+    image: '/images/lex-legal.png',
   },
  
-  {
-    title: 'BarelyHuman',
-    description: 'Shop your best gym outfit to chase better, not perfect.',
-    technologies: ['Shopify', "Apple Pay", "Google Pay","Shop Pay"],
-    github: '#',
-    demo: 'https://www.barelyhuman.com/',
-    image: '/images/barelyhuman.png',
-  },
+
 
 ];
 
