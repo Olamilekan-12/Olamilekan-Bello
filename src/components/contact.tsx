@@ -22,8 +22,8 @@ const ContactInfo = [
   {
     icon: <Phone className="h-6 w-6 text-primary" />,
     title: 'Call Me',
-    description: '+234 704 785 5298',
-    link: 'tel:+2347047855298',
+    description: '+234 905 863 7198',
+    link: 'tel:+2349058637198',
   },
 ];
 
