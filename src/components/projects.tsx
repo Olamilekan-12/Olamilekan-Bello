@@ -6,14 +6,22 @@ import Image from 'next/image';
 
 const projects = [
   {
-    title: 'Fazn',
-    description: 'Your complete digital solution partner',
-    technologies: ['Next.js', 'GSAP', 'Three.js', 'Tailwind CSS'],
-    github: 'https://github.com/Olamilekan-12/fazn',
-    demo: 'https://fazn.vercel.app/',
-    image: '/images/fazn.png',
+    title: 'Denhunt',
+    description: 'Find your next home with confidence. The property platform I founded and lead at Denhunt Ltd',
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
+    github: 'https://github.com/FaznUltra/denhunt_agency_web',
+    demo: 'https://agencytest.denhunt.com/',
+    image: '/images/denhunt.png',
   },
-    {
+  {
+    title: 'ManzilIQ',
+    description: 'Dubai property investment analytics. ROI metrics, market insights and portfolio tracking that help investors decide with data',
+    technologies: ['Next.js', 'Express', 'PostgreSQL', 'ECharts'],
+    github: '#',
+    demo: 'https://www.manziliq.com',
+    image: '/images/manziliq.png',
+  },
+  {
     title: 'Avant One',
     description: 'One Platform. Endless Potential.',
     technologies: ['ReactJS', "Supabase", "PostgreSQL","Shadcn UI"],
@@ -29,17 +37,6 @@ const projects = [
     demo: 'https://send24.co/',
     image: '/images/send24.png',
   },
-  {
-    title: 'Lex Legal',
-    description: 'Your Gateway to Legal Services',
-    technologies: ['NextJS', "Stripe", "SQL","Python"],
-    github: 'https://github.com/Olamilekan-12/lex-legal',
-    demo: 'https://lex-legal-brown.vercel.app/',
-    image: '/images/lex-legal.png',
-  },
- 
-
-
 ];
 
 export function Projects() {

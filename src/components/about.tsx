@@ -41,7 +41,7 @@ export function About() {
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              I am a passionate Fullstack Software Engineer with experience in building scalable, user-focused applications. 
+              I am the Founder of Denhunt Ltd and a passionate Fullstack Software Engineer with experience in building scalable, user-focused applications.
               I specialize in JavaScript/TypeScript technologies, including React, Next.js, Node.js, and Express.
             </p>
           </motion.div>

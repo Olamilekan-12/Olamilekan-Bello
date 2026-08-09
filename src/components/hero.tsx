@@ -18,7 +18,7 @@ export function Hero() {
     // Simulate download
     setTimeout(() => {
       const link = document.createElement('a');
-      link.href = '/bello_olamilekan_software_eng.pdf';
+      link.href = '/bello-olamilekan.pdf';
       link.download = 'Bello_Olamilekan_Resume.pdf';
       document.body.appendChild(link);
       link.click();
@@ -44,7 +44,7 @@ export function Hero() {
             className="mb-6"
           >
             <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
-              Fullstack Developer
+              Founder of Denhunt Ltd · Fullstack Developer
             </span>
           </motion.div>
           
@@ -58,7 +58,7 @@ export function Hero() {
               Hi, I&apos;m <span className="text-primary">Bello Olamilekan</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Fullstack Software Engineer | Cloud & DevOps Enthusiast | Building Scalable Systems
+              Founder of Denhunt Ltd | Fullstack Software Engineer | Cloud & DevOps Enthusiast | Building Scalable Systems
             </p>
           </motion.div>
           
@@ -68,7 +68,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            I build exceptional digital experiences that are fast, accessible, and visually appealing.
+            I build exceptional digital experiences that are fast, accessible, and visually appealing, and I lead that work as the Founder of Denhunt Ltd.
           </motion.p>
           
           <motion.div 
