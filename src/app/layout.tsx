@@ -31,7 +31,7 @@ export default function RootLayout({
         <meta name="author" content="Bello Olamilekan Olayinka" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:url" content="https://bello-olamilekan.vercel.app" />
+        <meta property="og:url" content="https://olamilekan-bello.vercel.app" />
         <meta property="og:title" content="Bello Olamilekan Olayinka | Principal Software Engineer" />
         <meta property="og:description" content="Principal Software Engineer building data intensive platforms for real estate intelligence, AI and analytics." />
         <meta property="og:site_name" content="Bello Olamilekan" />
