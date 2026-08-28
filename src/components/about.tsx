@@ -1,114 +1,101 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Database, Server } from 'lucide-react';
+import { Radar, Combine, Waypoints } from 'lucide-react';
+import { SectionHeading } from './section-heading';
+
+const pillars = [
+  {
+    icon: Radar,
+    title: 'Real estate intelligence',
+    description:
+      'Investment analysis, ROI modelling, property scoring, portfolio monitoring and market research, built on top of large property datasets.',
+  },
+  {
+    icon: Combine,
+    title: 'Data intensive platforms',
+    description:
+      'Schema design, analytics pipelines, search and retrieval, and reporting layers that keep complex business data queryable and correct.',
+  },
+  {
+    icon: Waypoints,
+    title: 'Systems and delivery',
+    description:
+      'Distributed architecture, event driven services, cloud infrastructure and the production operations that keep them running.',
+  },
+];
 
 export function About() {
-  const skills = [
-    {
-      icon: <Code className="h-6 w-6 text-primary" />,
-      title: 'Frontend Development',
-      description: 'Building responsive and interactive user interfaces using React, Next.js, and modern CSS frameworks.',
-    },
-    {
-      icon: <Server className="h-6 w-6 text-primary" />,
-      title: 'Backend Development',
-      description: 'Creating robust and scalable server-side applications with Node.js, Express, and various databases.',
-    },
-    {
-      icon: <Database className="h-6 w-6 text-primary" />,
-      title: 'Database Management',
-      description: 'Designing and optimizing database schemas and writing efficient queries for MongoDB and SQL databases.',
-    },
-  ];
-
   return (
-    <section id="about" className="py-20 md:py-32 bg-background">
+    <section id="about" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <SectionHeading
+          index="01"
+          label="About"
+          title="I build the systems behind property data."
+          lede="Principal Software Engineer with 6+ years designing, building and scaling production software across real estate technology, SaaS, fintech, logistics and AI enabled products."
+        />
+
+        <div className="mt-14 grid lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.45 }}
+            className="space-y-5 text-base leading-relaxed text-muted-foreground"
           >
-            <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary mb-4">
-              About Me
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Crafting Digital Experiences
-            </h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              I am the Founder of Denhunt Ltd and a passionate Fullstack Software Engineer with experience in building scalable, user-focused applications.
-              I specialize in JavaScript/TypeScript technologies, including React, Next.js, Node.js, and Express.
+            <p>
+              My work sits where property data meets engineering. At{' '}
+              <span className="text-foreground font-medium">ManzilIQ</span> I
+              independently designed and delivered a Dubai real estate investment
+              intelligence platform from the ground up, covering architecture,
+              backend, data, analytics, frontend, integrations and production
+              infrastructure.
+            </p>
+            <p>
+              At <span className="text-foreground font-medium">Denhunt</span> I lead
+              engineering on a property operations platform, placing critical business
+              invariants at the database layer so booking integrity and listing
+              accuracy are structural guarantees rather than policy. Earlier, I built
+              APIs and booking infrastructure for a property platform managing 40,000+
+              listings and 100,000+ daily API requests.
+            </p>
+            <p>
+              Across those systems I care about the same things: data models that stay
+              honest under pressure, interfaces that respect the person reading them,
+              and shipping work that moves a real business number.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 mb-6">
-                  {skill.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {skill.title}
-                </h3>
-                <p className="text-muted-foreground">
-                  {skill.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-20 bg-primary/5 p-8 rounded-xl border border-primary/10"
-          >
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-2/3 pr-0 md:pr-8 mb-6 md:mb-0">
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Let&apos;s Build Something Amazing Together
-                </h3>
-                <p className="text-muted-foreground">
-                  I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-                </p>
-              </div>
-              <div className="md:w-1/3 flex justify-center md:justify-end">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
+          <div className="space-y-8">
+            {pillars.map((pillar, index) => {
+              const Icon = pillar.icon;
+              return (
+                <motion.div
+                  key={pillar.title}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                  className="flex gap-4 border-t border-border pt-6"
                 >
-                  Get In Touch
-                  <svg
-                    className="ml-2 -mr-1 w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </motion.div>
+                  <Icon
+                    className="h-5 w-5 shrink-0 mt-0.5 text-primary"
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <h3 className="text-base font-semibold text-foreground">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

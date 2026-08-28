@@ -2,146 +2,74 @@
 
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/components/theme-provider';
-import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Sun, Moon, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
-];
 
 export function Navigation() {
   const [mounted, setMounted] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
-    
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
-  if (!mounted) {
-    return null;
-  }
+  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
     <header
       className={cn(
-        'fixed w-full z-50 transition-all duration-300',
-        scrolled ? 'bg-background/80 backdrop-blur-sm shadow-sm' : 'bg-transparent',
-        'border-b border-border/40'
+        'fixed inset-x-0 top-0 z-50 transition-colors duration-300',
+        scrolled
+          ? 'bg-background/85 backdrop-blur-sm border-b border-border'
+          : 'bg-transparent border-b border-transparent'
       )}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link href="#home" className="flex items-center">
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Bello Olamilekan
-              </span>
-            </Link>
-          </div>
+      <nav
+        className="container mx-auto px-4 sm:px-6 lg:px-8"
+        aria-label="Primary"
+      >
+        <div className="flex h-16 items-center justify-between">
+          <Link
+            href="#home"
+            className="font-mono text-sm font-semibold tracking-tight text-foreground"
+          >
+            bello<span className="text-muted-foreground">.olamilekan</span>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-full hover:bg-muted transition-colors"
-                aria-label="Toggle theme"
-              >
-                {theme === 'dark' ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                )}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md hover:bg-muted transition-colors"
-              aria-label="Toggle menu"
+          <div className="flex items-center gap-1 sm:gap-2">
+            <a
+              href="/bello-olamilekan.pdf"
+              download="Bello_Olamilekan_Olayinka_CV.pdf"
+              className="group inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
             >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
+              <Download
+                className="h-4 w-4 transition-transform group-hover:translate-y-0.5"
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+              <span className="hidden sm:inline">CV</span>
+            </a>
+
+            <button
+              onClick={toggleTheme}
+              className="rounded-md p-2 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors"
+              aria-label="Toggle colour theme"
+            >
+              {mounted && theme === 'dark' ? (
+                <Sun className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Moon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
               )}
             </button>
           </div>
         </div>
       </nav>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden"
-          >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-border/40">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-foreground/80 hover:bg-muted hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <button
-                onClick={() => {
-                  toggleTheme();
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-foreground/80 hover:bg-muted hover:text-primary transition-colors flex items-center"
-              >
-                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-                <span className="ml-2">
-                  {theme === 'dark' ? (
-                    <Sun className="h-5 w-5" />
-                  ) : (
-                    <Moon className="h-5 w-5" />
-                  )}
-                </span>
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
   );
 }

@@ -58,12 +58,12 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Bello Olamilekan
+              <span className="font-mono text-base font-semibold tracking-tight text-foreground">
+                bello<span className="text-muted-foreground">.olamilekan</span>
               </span>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
-              Fullstack Software Engineer crafting exceptional digital experiences with modern web technologies.
+              Principal Software Engineer building data intensive platforms for real estate intelligence, from data model through to production.
             </p>
             <div className="flex items-center space-x-4">
               {socialLinks.map((social, index) => (

@@ -5,142 +5,132 @@ import { Download, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { useToast } from './ui/use-toast';
 
+const facts = [
+  { value: '6+', label: 'Years shipping production systems' },
+  { value: '2M+', label: 'Daily transactions handled' },
+  { value: '250K+', label: 'Users served across platforms' },
+  { value: '100+', label: 'Enterprise clients supported' },
+];
+
+const focus = [
+  'Real estate intelligence',
+  'Data platforms',
+  'Distributed systems',
+  'AI enabled products',
+];
+
 export function Hero() {
   const { toast } = useToast();
 
   const handleDownloadResume = () => {
-    // This is a placeholder for the resume download functionality
-    // Replace with your actual resume URL
     toast({
-      title: 'Downloading Resume',
-      description: 'Your resume will start downloading shortly.',
+      title: 'Downloading CV',
+      description: 'Your download will begin shortly.',
     });
-    // Simulate download
     setTimeout(() => {
       const link = document.createElement('a');
       link.href = '/bello-olamilekan.pdf';
-      link.download = 'Bello_Olamilekan_Resume.pdf';
+      link.download = 'Bello_Olamilekan_Olayinka_CV.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    }, 1000);
+    }, 600);
   };
 
   return (
-    <section 
-      id="home" 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center border-b border-border pt-28 pb-20"
     >
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 to-transparent opacity-40 dark:opacity-20" />
-      </div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-        <div className="text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-6"
+            className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground"
           >
-            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
-              Founder of Denhunt Ltd · Fullstack Developer
-            </span>
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+            Lagos, Nigeria
+            <span className="text-border">/</span>
+            Available for software engineering roles
           </motion.div>
-          
-          <motion.div 
-            className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground"
-            initial={{ opacity: 0, y: 20 }}
+
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.55, delay: 0.06 }}
+            className="mt-8 text-4xl sm:text-6xl md:text-7xl font-semibold tracking-tight leading-[1.02] text-foreground"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Hi, I&apos;m <span className="text-primary">Bello Olamilekan</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Founder of Denhunt Ltd | Fullstack Software Engineer | Cloud & DevOps Enthusiast | Building Scalable Systems
-            </p>
-          </motion.div>
-          
-          <motion.p 
-            className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
+            Bello Olamilekan
+            <br />
+            Olayinka
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.55, delay: 0.12 }}
+            className="mt-7 max-w-2xl text-lg md:text-xl leading-relaxed text-muted-foreground"
           >
-            I build exceptional digital experiences that are fast, accessible, and visually appealing, and I lead that work as the Founder of Denhunt Ltd.
+            Principal Software Engineer building data intensive platforms for real
+            estate intelligence. I design the architecture, model the data, and take
+            the system all the way into production.
           </motion.p>
-          
-          <motion.div 
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.55, delay: 0.18 }}
+            className="mt-8 flex flex-wrap gap-x-3 gap-y-2 font-mono text-xs text-muted-foreground"
           >
-            <Button 
-              onClick={handleDownloadResume}
-              className="group px-6 py-3 text-base font-medium transition-all duration-300"
-              size="lg"
-            >
-              Download Resume
-              <Download className="ml-2 h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
+            {focus.map((item) => (
+              <span
+                key={item}
+                className="border border-border rounded-full px-3 py-1"
+              >
+                {item}
+              </span>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.24 }}
+            className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4"
+          >
+            <Button onClick={handleDownloadResume} size="lg" className="group">
+              Download CV
+              <Download className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-0.5" />
             </Button>
-            
-            <Button 
-              variant="outline" 
-              className="px-6 py-3 text-base font-medium group transition-all duration-300"
-              size="lg"
-              asChild
-            >
-              <a href="#contact">
-                Let&apos;s Talk
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+
+            <Button variant="outline" size="lg" className="group" asChild>
+              <a href="#projects">
+                View selected work
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
           </motion.div>
-        </div>
-        
-        <motion.div 
-          className="mt-16 md:mt-24 flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full blur-3xl" />
-            <div className="relative w-full h-full flex items-center justify-center">
-              <div className="w-3/4 h-3/4 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 backdrop-blur-sm border border-primary/20" />
-            </div>
-          </div>
-        </motion.div>
-      </div>
-      
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-        <motion.div
-          animate={{
-            y: [0, 10, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatType: 'loop',
-          }}
-          className="text-muted-foreground"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-6 w-6"
+
+          <motion.dl
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.32 }}
+            className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 border-t border-border pt-8"
           >
-            <path d="M12 5v14M19 12l-7 7-7-7" />
-          </svg>
-        </motion.div>
+            {facts.map((fact) => (
+              <div key={fact.label}>
+                <dt className="font-mono text-2xl md:text-3xl tabular-nums text-foreground">
+                  {fact.value}
+                </dt>
+                <dd className="mt-2 text-sm leading-snug text-muted-foreground">
+                  {fact.label}
+                </dd>
+              </div>
+            ))}
+          </motion.dl>
+        </div>
       </div>
     </section>
   );

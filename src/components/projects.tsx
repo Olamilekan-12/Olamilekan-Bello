@@ -1,39 +1,56 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
+import { SectionHeading } from './section-heading';
 
 const projects = [
   {
-    title: 'Denhunt',
-    description: 'Find your next home with confidence. The property platform I founded and lead at Denhunt Ltd',
-    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
-    github: 'https://github.com/FaznUltra/denhunt_agency_web',
-    demo: 'https://agencytest.denhunt.com/',
-    image: '/images/denhunt.png',
-  },
-  {
     title: 'ManzilIQ',
-    description: 'Dubai property investment analytics. ROI metrics, market insights and portfolio tracking that help investors decide with data',
-    technologies: ['Next.js', 'Express', 'PostgreSQL', 'ECharts'],
-    github: '#',
+    domain: 'Real estate investment intelligence',
+    location: 'Dubai, UAE',
+    description:
+      'A property intelligence platform for the Dubai market. Investors analyse stock through ROI analysis, property scoring, portfolio monitoring, comparison and market research, with geographic analysis and server generated investment reports.',
+    contribution:
+      'Designed and delivered end to end, from data model and backend services to analytics interfaces and production infrastructure.',
+    technologies: ['Next.js', 'Express', 'PostgreSQL', 'Redis', 'WebSockets', 'ECharts', 'Stripe'],
     demo: 'https://www.manziliq.com',
     image: '/images/manziliq.png',
   },
   {
+    title: 'Denhunt',
+    domain: 'Property operations and marketplace',
+    location: 'Nigeria',
+    description:
+      'The system of record shortlet and hostel businesses run their operation on, covering bookings, unified availability, payments, expenses, staff roles and guest messaging, with a marketplace published from the same records.',
+    contribution:
+      'Architected the platform so booking integrity and listing accuracy are enforced by the database rather than by policy.',
+    technologies: ['PostgreSQL', 'Supabase', 'Next.js', 'TypeScript', 'Zustand', 'shadcn/ui'],
+    demo: 'https://denhunt.com',
+    image: '/images/denhunt.png',
+  },
+  {
     title: 'Avant One',
-    description: 'One Platform. Endless Potential.',
-    technologies: ['ReactJS', "Supabase", "PostgreSQL","Shadcn UI"],
-    github: '#',
+    domain: 'Customer experience platform',
+    location: 'Regulated industries',
+    description:
+      'Application surfaces for a CX platform serving regulated sectors, where auditability and access control are product requirements rather than afterthoughts.',
+    contribution:
+      'Built the frontend against PostgreSQL with row level security, so tenant isolation is enforced at the data layer.',
+    technologies: ['React', 'Supabase', 'PostgreSQL', 'shadcn/ui'],
     demo: 'https://app.avantone.io/',
     image: '/images/avantone.png',
   },
   {
-    title: 'send24',
-    description: 'Embark on a low cost shipping experience with our hub services',
-    technologies: ['Next.js (Web)', 'Swift UI (APP)', 'Laravel', 'SQL'],
-    github: '#',
+    title: 'Send24',
+    domain: 'Logistics and hub based shipping',
+    location: 'Nigeria',
+    description:
+      'The customer facing platform for a nationwide delivery service built on low cost hub logistics, covering booking a shipment through to tracking it.',
+    contribution:
+      'Worked across the web client and backend, keeping pricing and tracking legible to non technical senders while modelling real hub routing underneath.',
+    technologies: ['Next.js', 'Laravel', 'SQL', 'SwiftUI'],
     demo: 'https://send24.co/',
     image: '/images/send24.png',
   },
@@ -41,108 +58,90 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 md:py-32 bg-muted/20">
+    <section id="projects" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary mb-4">
-            My Work
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Featured Projects
-          </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Here are some of my recent projects. Each one was built to solve a specific problem or explore new technologies.
-          </p>
-        </motion.div>
+        <SectionHeading
+          index="03"
+          label="Selected work"
+          title="Platforms built around property data."
+          lede="Systems I designed and shipped, most of them carrying live business data in production today."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+        <div className="mt-14 space-y-20 md:space-y-24">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
+            <motion.article
+              key={project.title}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5 }}
+              className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-start"
             >
-              <div className="h-48 bg-muted/30 relative overflow-hidden">
-                <Image 
-                  src={project.image} 
-                  alt={`${project.title} preview`} 
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-50"></div>
+              <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block relative aspect-[16/10] overflow-hidden rounded-lg border border-border bg-muted/30"
+                >
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} interface`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </a>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-2">
+
+              <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                <div className="flex items-baseline gap-3 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  <span className="tabular-nums">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span>{project.location}</span>
+                </div>
+
+                <h3 className="mt-4 text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="mt-1.5 text-sm font-medium text-primary">
+                  {project.domain}
+                </p>
+
+                <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary/10 text-primary"
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground border-l-2 border-border pl-4">
+                  {project.contribution}
+                </p>
+
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <li
+                      key={tech}
+                      className="font-mono text-xs text-muted-foreground border border-border rounded px-2 py-1"
                     >
                       {tech}
-                    </span>
+                    </li>
                   ))}
-                </div>
-                <div className="flex items-center gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors"
-                  >
-                    <Github className="h-4 w-4 mr-1.5" />
-                    Code
-                  </a>
+                </ul>
+
+                <div className="mt-7 flex items-center gap-6">
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    className="group inline-flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors"
                   >
-                    <ExternalLink className="h-4 w-4 mr-1.5" />
-                    Live Demo
+                    Visit platform
+                    <ArrowUpRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-muted-foreground mb-6">
-            Interested in seeing more of my work?
-          </p>
-          <a
-            href="https://github.com/Olamilekan-12"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors font-medium"
-          >
-            View All Projects on GitHub
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </a>
-        </motion.div>
       </div>
     </section>
   );
