@@ -2,90 +2,59 @@
 
 import { motion } from 'framer-motion';
 import {
+  Braces,
+  Frame,
   Blocks,
   TableProperties,
-  ScanLine,
   Boxes,
-  Frame,
-  Binary,
-  Workflow,
-  Gauge,
-  Crosshair,
+  Wrench,
+  Plug,
 } from 'lucide-react';
 import { SectionHeading } from './section-heading';
 
 const stack = [
   {
-    icon: Blocks,
-    category: 'Backend and application',
-    items: [
-      'Node.js', 'Express', 'Python', 'Django', 'FastAPI', 'Go', 'C#',
-      'REST', 'GraphQL', 'WebSockets', 'Microservices',
-    ],
-  },
-  {
-    icon: TableProperties,
-    category: 'Databases',
-    items: [
-      'PostgreSQL', 'MySQL', 'MongoDB', 'DynamoDB', 'Redis',
-      'Data modelling', 'Query optimisation', 'Row level security',
-    ],
-  },
-  {
-    icon: ScanLine,
-    category: 'Search and data systems',
-    items: [
-      'Elasticsearch', 'AWS Kinesis', 'Analytics pipelines',
-      'Search systems', 'Data retrieval', 'Business intelligence',
-    ],
-  },
-  {
-    icon: Boxes,
-    category: 'Cloud and infrastructure',
-    items: [
-      'AWS', 'Lambda', 'EC2', 'RDS', 'S3', 'API Gateway',
-      'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'Vercel',
-    ],
+    icon: Braces,
+    category: 'Languages',
+    items: ['JavaScript', 'TypeScript'],
   },
   {
     icon: Frame,
     category: 'Frontend',
     items: [
-      'React', 'Next.js', 'TypeScript', 'TanStack Query', 'Zustand',
-      'Redux', 'Tailwind CSS', 'shadcn/ui', 'Vue.js', 'Nuxt',
+      'React', 'Next.js', 'TanStack Query', 'Zustand',
+      'Redux', 'Tailwind CSS', 'shadcn/ui',
     ],
   },
   {
-    icon: Binary,
-    category: 'AI and intelligent applications',
+    icon: Blocks,
+    category: 'Backend',
+    items: ['Node.js', 'Express', 'REST APIs', 'GraphQL', 'WebSockets'],
+  },
+  {
+    icon: TableProperties,
+    category: 'Databases and search',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Elasticsearch'],
+  },
+  {
+    icon: Boxes,
+    category: 'AWS',
+    items: ['Lambda', 'EC2', 'RDS', 'S3', 'API Gateway', 'Kinesis'],
+  },
+  {
+    icon: Wrench,
+    category: 'Engineering tools',
     items: [
-      'AI powered applications', 'Conversational interfaces',
-      'Data driven products', 'Analytics', 'Search and retrieval',
+      'Git', 'GitHub Actions', 'Docker', 'Jest', 'Cypress',
+      'Postman', 'k6', 'Grafana', 'Prometheus', 'Storybook',
     ],
   },
   {
-    icon: Workflow,
-    category: 'APIs and integrations',
+    icon: Plug,
+    category: 'Integrations',
     items: [
       'Stripe', 'Twilio', 'Resend', 'Google OAuth',
-      'Google Maps Platform', 'Google Analytics Data API', 'Slack API',
-    ],
-  },
-  {
-    icon: Gauge,
-    category: 'Testing and observability',
-    items: [
-      'Jest', 'Cypress', 'Pytest', 'Go Test', 'k6',
-      'Artillery', 'Postman', 'Prometheus', 'Grafana',
-    ],
-  },
-  {
-    icon: Crosshair,
-    category: 'Engineering practice',
-    items: [
-      'System architecture', 'Distributed systems', 'Performance engineering',
-      'Security', 'Observability', 'CI/CD', 'Design systems',
-      'Technical leadership',
+      'Google Maps', 'Google Analytics',
     ],
   },
 ];
@@ -96,9 +65,9 @@ export function Skills() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="02"
-          label="Capabilities"
-          title="The stack I work in."
-          lede="Backend architecture, data engineering, cloud infrastructure and modern frontend, applied to systems that carry real business data."
+          label="Stack"
+          title="What I actually work in."
+          lede="My primary stack is TypeScript and JavaScript across React, Next.js, Node.js and Express, backed by PostgreSQL and AWS."
         />
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">

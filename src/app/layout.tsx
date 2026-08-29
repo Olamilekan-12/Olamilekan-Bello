@@ -26,18 +26,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <title>Bello Olamilekan Olayinka | Principal Software Engineer</title>
-        <meta name="description" content="Principal Software Engineer building data intensive platforms for real estate intelligence, AI and analytics." />
-        <meta name="keywords" content="Principal Software Engineer, Real Estate Intelligence, PropTech, Data Platforms, Analytics, Distributed Systems, PostgreSQL, AWS, TypeScript, React, Next.js, Node.js" />
+        <meta name="description" content="Principal Software Engineer building production web applications in JavaScript and TypeScript, with React, Next.js, Node.js and PostgreSQL." />
+        <meta name="keywords" content="Principal Software Engineer, JavaScript, TypeScript, React, Next.js, Node.js, Express, PostgreSQL, AWS, Full Stack Developer, Real Estate Software" />
         <meta name="author" content="Bello Olamilekan Olayinka" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:url" content="https://olamilekan-bello.vercel.app" />
         <meta property="og:title" content="Bello Olamilekan Olayinka | Principal Software Engineer" />
-        <meta property="og:description" content="Principal Software Engineer building data intensive platforms for real estate intelligence, AI and analytics." />
+        <meta property="og:description" content="Principal Software Engineer building production web applications in JavaScript and TypeScript, with React, Next.js, Node.js and PostgreSQL." />
         <meta property="og:site_name" content="Bello Olamilekan" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Bello Olamilekan Olayinka | Principal Software Engineer" />
-        <meta name="twitter:description" content="Principal Software Engineer building data intensive platforms for real estate intelligence, AI and analytics." />
+        <meta name="twitter:description" content="Principal Software Engineer building production web applications in JavaScript and TypeScript, with React, Next.js, Node.js and PostgreSQL." />
         <meta name="twitter:creator" content="@bello_olamilekan" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />

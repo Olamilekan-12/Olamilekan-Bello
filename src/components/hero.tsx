@@ -13,10 +13,11 @@ const facts = [
 ];
 
 const focus = [
-  'Real estate intelligence',
-  'Data platforms',
-  'Distributed systems',
-  'AI enabled products',
+  'TypeScript',
+  'React and Next.js',
+  'Node.js and Express',
+  'PostgreSQL',
+  'AWS',
 ];
 
 export function Hero() {
@@ -73,9 +74,9 @@ export function Hero() {
             transition={{ duration: 0.55, delay: 0.12 }}
             className="mt-7 max-w-2xl text-lg md:text-xl leading-relaxed text-muted-foreground"
           >
-            Principal Software Engineer building data intensive platforms for real
-            estate intelligence. I design the architecture, model the data, and take
-            the system all the way into production.
+            Principal Software Engineer building production web applications in
+            JavaScript and TypeScript. I like owning a product from the database and
+            API through to the interface and the deployment that ships it.
           </motion.p>
 
           <motion.div

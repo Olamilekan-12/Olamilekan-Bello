@@ -1,27 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Radar, Combine, Waypoints } from 'lucide-react';
+import { Waypoints, Radar, Gauge } from 'lucide-react';
 import { SectionHeading } from './section-heading';
 
 const pillars = [
   {
-    icon: Radar,
-    title: 'Real estate intelligence',
-    description:
-      'Investment analysis, ROI modelling, property scoring, portfolio monitoring and market research, built on top of large property datasets.',
-  },
-  {
-    icon: Combine,
-    title: 'Data intensive platforms',
-    description:
-      'Schema design, analytics pipelines, search and retrieval, and reporting layers that keep complex business data queryable and correct.',
-  },
-  {
     icon: Waypoints,
-    title: 'Systems and delivery',
+    title: 'Database through to interface',
     description:
-      'Distributed architecture, event driven services, cloud infrastructure and the production operations that keep them running.',
+      'I prefer owning a feature end to end: the schema, the API, the screens people actually use, and the deployment that puts it in front of them.',
+  },
+  {
+    icon: Radar,
+    title: 'Real estate products',
+    description:
+      'Property investment analytics, listings, booking systems, property operations, portfolio monitoring, comparison and market research.',
+  },
+  {
+    icon: Gauge,
+    title: 'Production scale',
+    description:
+      'Systems serving 250,000+ users and 100+ enterprise clients, including a platform processing 2M+ daily transactions.',
   },
 ];
 
@@ -32,8 +32,8 @@ export function About() {
         <SectionHeading
           index="01"
           label="About"
-          title="I build the systems behind property data."
-          lede="Principal Software Engineer with 6+ years designing, building and scaling production software across real estate technology, SaaS, fintech, logistics and AI enabled products."
+          title="Full stack, mostly TypeScript."
+          lede="Principal Software Engineer with 6+ years building production web applications in JavaScript and TypeScript, with a lot of that time spent on real estate products."
         />
 
         <div className="mt-14 grid lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-20">
@@ -45,25 +45,26 @@ export function About() {
             className="space-y-5 text-base leading-relaxed text-muted-foreground"
           >
             <p>
-              My work sits where property data meets engineering. At{' '}
-              <span className="text-foreground font-medium">ManzilIQ</span> I
-              independently designed and delivered a Dubai real estate investment
-              intelligence platform from the ground up, covering architecture,
-              backend, data, analytics, frontend, integrations and production
-              infrastructure.
+              My primary stack is TypeScript and JavaScript across React, Next.js,
+              Node.js and Express. Most of what I build comes down to the same
+              ingredients: backend APIs, database driven applications, real time
+              features, dashboards, payment flows and the customer facing product on
+              top of them.
             </p>
             <p>
-              At <span className="text-foreground font-medium">Denhunt</span> I lead
-              engineering on a property operations platform, placing critical business
-              invariants at the database layer so booking integrity and listing
-              accuracy are structural guarantees rather than policy. Earlier, I built
-              APIs and booking infrastructure for a property platform managing 40,000+
-              listings and 100,000+ daily API requests.
+              At <span className="text-foreground font-medium">ManzilIQ</span> I built a
+              property investment platform for the Dubai market across the frontend,
+              the Express and PostgreSQL backend, and the production infrastructure. At{' '}
+              <span className="text-foreground font-medium">Denhunt</span> I build a
+              property management platform for shortlet and hostel operators, covering
+              bookings, availability, payments, staff and a marketplace that runs on the
+              same data.
             </p>
             <p>
-              Across those systems I care about the same things: data models that stay
-              honest under pressure, interfaces that respect the person reading them,
-              and shipping work that moves a real business number.
+              Earlier work includes a real estate platform with 40,000+ listings and
+              100,000+ daily API requests. Across all of it I care about writing
+              software that stays understandable, maintainable and reliable once other
+              people have to work on it.
             </p>
           </motion.div>
 

@@ -63,7 +63,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
-              Principal Software Engineer building data intensive platforms for real estate intelligence, from data model through to production.
+              Principal Software Engineer building production web applications in JavaScript and TypeScript, from the database through to the interface.
             </p>
             <div className="flex items-center space-x-4">
               {socialLinks.map((social, index) => (

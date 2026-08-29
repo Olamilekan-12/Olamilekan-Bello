@@ -8,25 +8,25 @@ import { SectionHeading } from './section-heading';
 const projects = [
   {
     title: 'ManzilIQ',
-    domain: 'Real estate investment intelligence',
+    domain: 'Real estate investment platform',
     location: 'Dubai, UAE',
     description:
-      'A property intelligence platform for the Dubai market. Investors analyse stock through ROI analysis, property scoring, portfolio monitoring, comparison and market research, with geographic analysis and server generated investment reports.',
+      'A property investment platform for the Dubai real estate market. Users analyse properties through ROI calculations, property scoring, portfolio monitoring, comparisons and market research, with maps and server generated PDF reports.',
     contribution:
-      'Designed and delivered end to end, from data model and backend services to analytics interfaces and production infrastructure.',
-    technologies: ['Next.js', 'Express', 'PostgreSQL', 'Redis', 'WebSockets', 'ECharts', 'Stripe'],
+      'Built the Next.js frontend, the Express and PostgreSQL backend, and the production infrastructure. Live with 2,000+ users, in English and Arabic including right to left support.',
+    technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'WebSockets', 'ECharts'],
     demo: 'https://www.manziliq.com',
     image: '/images/manziliq.png',
   },
   {
     title: 'Denhunt',
-    domain: 'Property operations and marketplace',
+    domain: 'Property management and marketplace',
     location: 'Nigeria',
     description:
-      'The system of record shortlet and hostel businesses run their operation on, covering bookings, unified availability, payments, expenses, staff roles and guest messaging, with a marketplace published from the same records.',
+      'A property management platform for shortlet and hostel businesses, covering bookings, availability, payments, expenses, staff management, housekeeping, guest messaging and subscriptions, plus a marketplace that runs on the same property data.',
     contribution:
-      'Architected the platform so booking integrity and listing accuracy are enforced by the database rather than by policy.',
-    technologies: ['PostgreSQL', 'Supabase', 'Next.js', 'TypeScript', 'Zustand', 'shadcn/ui'],
+      'Designed the database structure and built booking rules at the database level so two customers cannot book the same unit at the same time. Payments keep a history of corrections rather than overwriting records.',
+    technologies: ['TypeScript', 'Next.js', 'React', 'PostgreSQL', 'Supabase', 'TanStack Query', 'Zustand', 'shadcn/ui'],
     demo: 'https://denhunt.com',
     image: '/images/denhunt.png',
   },
@@ -35,9 +35,9 @@ const projects = [
     domain: 'Customer experience platform',
     location: 'Regulated industries',
     description:
-      'Application surfaces for a CX platform serving regulated sectors, where auditability and access control are product requirements rather than afterthoughts.',
+      'Application screens for a customer experience platform used in regulated sectors, where access control and an audit trail are part of the product rather than an afterthought.',
     contribution:
-      'Built the frontend against PostgreSQL with row level security, so tenant isolation is enforced at the data layer.',
+      'Built the React frontend against PostgreSQL, using row level security so each tenant only reads its own data.',
     technologies: ['React', 'Supabase', 'PostgreSQL', 'shadcn/ui'],
     demo: 'https://app.avantone.io/',
     image: '/images/avantone.png',
@@ -49,7 +49,7 @@ const projects = [
     description:
       'The customer facing platform for a nationwide delivery service built on low cost hub logistics, covering booking a shipment through to tracking it.',
     contribution:
-      'Worked across the web client and backend, keeping pricing and tracking legible to non technical senders while modelling real hub routing underneath.',
+      'Built the Next.js web client and shipment booking, pricing and tracking flows, keeping them readable for senders who are not technical.',
     technologies: ['Next.js', 'Laravel', 'SQL', 'SwiftUI'],
     demo: 'https://send24.co/',
     image: '/images/send24.png',
@@ -63,8 +63,8 @@ export function Projects() {
         <SectionHeading
           index="03"
           label="Selected work"
-          title="Platforms built around property data."
-          lede="Systems I designed and shipped, most of them carrying live business data in production today."
+          title="Things I have built."
+          lede="Products I built and shipped, most of them running in production with real customers today."
         />
 
         <div className="mt-14 space-y-20 md:space-y-24">
