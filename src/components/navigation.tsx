@@ -44,7 +44,7 @@ export function Navigation() {
 
           <div className="flex items-center gap-1 sm:gap-2">
             <a
-              href="/bello-olamilekan.pdf"
+              href="/bello-olamilekan-olayinka-cv.pdf"
               download="Bello_Olamilekan_Olayinka_CV.pdf"
               className="group inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
             >

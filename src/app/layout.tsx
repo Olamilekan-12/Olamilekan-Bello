@@ -27,7 +27,7 @@ export default function RootLayout({
       <head>
         <title>Bello Olamilekan Olayinka | Principal Software Engineer</title>
         <meta name="description" content="Principal Software Engineer building production web applications in JavaScript and TypeScript, with React, Next.js, Node.js and PostgreSQL." />
-        <meta name="keywords" content="Principal Software Engineer, JavaScript, TypeScript, React, Next.js, Node.js, Express, PostgreSQL, AWS, Full Stack Developer, Real Estate Software" />
+        <meta name="keywords" content="Principal Software Engineer, JavaScript, TypeScript, React, Next.js, Node.js, Express, PostgreSQL, AWS, Full Stack Developer, Logistics Software, Workforce Technology" />
         <meta name="author" content="Bello Olamilekan Olayinka" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />

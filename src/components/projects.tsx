@@ -1,59 +1,49 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
-import Image from 'next/image';
-import { SectionHeading } from './section-heading';
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { SectionHeading } from "./section-heading";
 
 const projects = [
-  {
-    title: 'ManzilIQ',
-    domain: 'Real estate investment platform',
-    location: 'Dubai, UAE',
+    {
+    title: "Paydeet",
+    domain: "Payment infrastructure",
+    location: "Nigeria",
     description:
-      'A property investment platform for the Dubai real estate market. Users analyse properties through ROI calculations, property scoring, portfolio monitoring, comparisons and market research, with maps and server generated PDF reports.',
+      "A payment platform that helps businesses accept direct bank payments, generate payment links and monitor transactions through a merchant dashboard.",
     contribution:
-      'Built the Next.js frontend, the Express and PostgreSQL backend, and the production infrastructure. Live with 2,000+ users, in English and Arabic including right to left support.',
-    technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'WebSockets', 'ECharts'],
-    demo: 'https://www.manziliq.com',
-    image: '/images/manziliq.png',
+      "Built the frontend and integrated it with the backend services, working with APIs powered by Node.js, AWS Lambda and API Gateway without owning the backend implementation.",
+    technologies: ["React", "Node.js", "AWS Lambda", "API Gateway"],
+    demo: "https://getpaydeet.com/",
+    image: "/images/paydeet.png",
+  },
+    {
+    title: "Send24",
+    domain: "Nationwide same day delivery",
+    location: "Nigeria",
+    description:
+      "A delivery platform reaching all 36 states with one flat rate per delivery, live tracking and alerts, low cost hub drop offs, bulk uploads for corporate shipments and a business dashboard for delivery history and costs.",
+    contribution:
+      "Worked on the Next.js web platform: instant quotes from pickup and destination addresses, map based hub search, shipment booking and tracking.",
+    technologies: ["Next.js", "React", "React Query", "Google Maps API"],
+    demo: "https://send24.co/",
+    image: "/images/send24.png",
   },
   {
-    title: 'Denhunt',
-    domain: 'Property management and marketplace',
-    location: 'Nigeria',
+    title: "Avant One",
+    domain: "Customer experience platform",
+    location: "Regulated industries",
     description:
-      'A property management platform for shortlet and hostel businesses, covering bookings, availability, payments, expenses, staff management, housekeeping, guest messaging and subscriptions, plus a marketplace that runs on the same property data.',
+      "Application screens for a customer experience platform used in regulated sectors, where access control and an audit trail are part of the product rather than an afterthought.",
     contribution:
-      'Designed the database structure and built booking rules at the database level so two customers cannot book the same unit at the same time. Payments keep a history of corrections rather than overwriting records.',
-    technologies: ['TypeScript', 'Next.js', 'React', 'PostgreSQL', 'Supabase', 'TanStack Query', 'Zustand', 'shadcn/ui'],
-    demo: 'https://denhunt.com',
-    image: '/images/denhunt.png',
+      "Built the React frontend against PostgreSQL, using row level security so each tenant only reads its own data.",
+    technologies: ["React", "Supabase", "PostgreSQL", "shadcn/ui"],
+    demo: "https://app.avantone.io/",
+    image: "/images/avantone.png",
   },
-  {
-    title: 'Avant One',
-    domain: 'Customer experience platform',
-    location: 'Regulated industries',
-    description:
-      'Application screens for a customer experience platform used in regulated sectors, where access control and an audit trail are part of the product rather than an afterthought.',
-    contribution:
-      'Built the React frontend against PostgreSQL, using row level security so each tenant only reads its own data.',
-    technologies: ['React', 'Supabase', 'PostgreSQL', 'shadcn/ui'],
-    demo: 'https://app.avantone.io/',
-    image: '/images/avantone.png',
-  },
-  {
-    title: 'Send24',
-    domain: 'Logistics and hub based shipping',
-    location: 'Nigeria',
-    description:
-      'The customer facing platform for a nationwide delivery service built on low cost hub logistics, covering booking a shipment through to tracking it.',
-    contribution:
-      'Built the Next.js web client and shipment booking, pricing and tracking flows, keeping them readable for senders who are not technical.',
-    technologies: ['Next.js', 'Laravel', 'SQL', 'SwiftUI'],
-    demo: 'https://send24.co/',
-    image: '/images/send24.png',
-  },
+
+
 ];
 
 export function Projects() {
@@ -73,11 +63,11 @@ export function Projects() {
               key={project.title}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
+              viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5 }}
               className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-start"
             >
-              <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+              <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                 <a
                   href={project.demo}
                   target="_blank"
@@ -94,10 +84,10 @@ export function Projects() {
                 </a>
               </div>
 
-              <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+              <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                 <div className="flex items-baseline gap-3 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
                   <span className="tabular-nums">
-                    {String(index + 1).padStart(2, '0')}
+                    {String(index + 1).padStart(2, "0")}
                   </span>
                   <span>{project.location}</span>
                 </div>

@@ -6,10 +6,10 @@ import { Button } from '../components/ui/button';
 import { useToast } from './ui/use-toast';
 
 const facts = [
-  { value: '6+', label: 'Years shipping production systems' },
-  { value: '2M+', label: 'Daily transactions handled' },
-  { value: '250K+', label: 'Users served across platforms' },
-  { value: '100+', label: 'Enterprise clients supported' },
+  { value: '3+', label: 'Years shipping production systems' },
+  { value: '3', label: 'Companies across logistics, workforce tech and consulting' },
+  { value: '3', label: 'Live platforms in selected work' },
+  { value: '2', label: 'AWS Associate certifications' },
 ];
 
 const focus = [
@@ -30,7 +30,7 @@ export function Hero() {
     });
     setTimeout(() => {
       const link = document.createElement('a');
-      link.href = '/bello-olamilekan.pdf';
+      link.href = '/bello-olamilekan-olayinka-cv.pdf';
       link.download = 'Bello_Olamilekan_Olayinka_CV.pdf';
       document.body.appendChild(link);
       link.click();
