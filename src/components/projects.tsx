@@ -19,6 +19,18 @@ const projects = [
     image: "/images/paydeet.png",
   },
     {
+    title: "GMPS",
+    domain: "Peer to peer betting",
+    location: "Web and mobile",
+    description:
+      "A peer to peer betting platform where people browse matches and bet against each other, with web and mobile applications on the same backend.",
+    contribution:
+      "Built the backend services and APIs in Go, the Next.js web application for match browsing and betting, mobile features in React Native and Expo, and the AWS infrastructure provisioned with Terraform.",
+    technologies: ["Go", "Next.js", "React Native", "Expo", "AWS", "Terraform"],
+    demo: "https://dev.gmps.be/platform/matches",
+    image: "/images/gmps.png",
+  },
+  {
     title: "Send24",
     domain: "Nationwide same day delivery",
     location: "Nigeria",
@@ -26,7 +38,7 @@ const projects = [
       "A delivery platform reaching all 36 states with one flat rate per delivery, live tracking and alerts, low cost hub drop offs, bulk uploads for corporate shipments and a business dashboard for delivery history and costs.",
     contribution:
       "Worked on the Next.js web platform: instant quotes from pickup and destination addresses, map based hub search, shipment booking and tracking.",
-    technologies: ["Next.js", "React", "React Query", "Google Maps API"],
+    technologies: ["Next.js", "React", "TanStack Query", "Google Maps API"],
     demo: "https://send24.co/",
     image: "/images/send24.png",
   },

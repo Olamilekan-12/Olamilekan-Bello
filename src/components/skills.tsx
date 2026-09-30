@@ -9,6 +9,8 @@ import {
   Boxes,
   Wrench,
   Plug,
+  Compass,
+  Smartphone,
 } from 'lucide-react';
 import { SectionHeading } from './section-heading';
 
@@ -16,7 +18,7 @@ const stack = [
   {
     icon: Braces,
     category: 'Languages',
-    items: ['JavaScript', 'TypeScript'],
+    items: ['JavaScript', 'TypeScript', 'Go'],
   },
   {
     icon: Frame,
@@ -27,9 +29,16 @@ const stack = [
     ],
   },
   {
+    icon: Smartphone,
+    category: 'Mobile',
+    items: ['React Native', 'Expo'],
+  },
+  {
     icon: Blocks,
     category: 'Backend',
-    items: ['Node.js', 'Express', 'REST APIs', 'GraphQL', 'WebSockets'],
+    items: [
+      'Go', 'Node.js', 'Express', 'REST APIs', 'GraphQL', 'WebSockets',
+    ],
   },
   {
     icon: TableProperties,
@@ -43,10 +52,19 @@ const stack = [
   },
   {
     icon: Wrench,
-    category: 'Engineering tools',
+    category: 'Infrastructure and tools',
     items: [
-      'Git', 'GitHub Actions', 'Docker', 'Jest', 'Cypress',
+      'Terraform', 'Git', 'GitHub Actions', 'Docker', 'Jest', 'Cypress',
       'Postman', 'k6', 'Grafana', 'Prometheus', 'Storybook',
+    ],
+  },
+  {
+    icon: Compass,
+    category: 'Engineering fundamentals',
+    items: [
+      'System design', 'Object oriented programming',
+      'Go concurrency', 'Goroutines', 'Channels', 'Mutexes',
+      'API design', 'Data modelling',
     ],
   },
   {
@@ -67,7 +85,7 @@ export function Skills() {
           index="02"
           label="Stack"
           title="What I actually work in."
-          lede="My primary stack is TypeScript and JavaScript across React, Next.js, Node.js and Express, backed by PostgreSQL and AWS."
+          lede="My primary stack is TypeScript and JavaScript across React, Next.js, Node.js and Express, backed by Go, PostgreSQL and AWS, with React Native for mobile and Terraform for infrastructure."
         />
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">

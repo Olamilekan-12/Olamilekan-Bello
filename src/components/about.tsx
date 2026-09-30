@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Waypoints, Radar, BadgeCheck } from 'lucide-react';
+import { Waypoints, Radar, Layers } from 'lucide-react';
 import { SectionHeading } from './section-heading';
 
 const pillars = [
@@ -9,19 +9,19 @@ const pillars = [
     icon: Waypoints,
     title: 'Database through to interface',
     description:
-      'I prefer owning a feature end to end: the schema, the API, the screens people actually use, and the deployment that puts it in front of them.',
+      'I prefer owning a feature end to end: the schema, the API, the screens people actually use, and the deployment that puts it in front of them. Comfortable with system design and object oriented programming when a feature needs a shape before it needs code.',
   },
   {
     icon: Radar,
     title: 'Products across industries',
     description:
-      'Logistics and shipment tracking, workforce and HR operations, payments, and custom software built for client businesses.',
+      'Logistics and shipment tracking, peer to peer betting, workforce and HR operations, payments, and custom software built for client businesses.',
   },
   {
-    icon: BadgeCheck,
-    title: 'AWS certified',
+    icon: Layers,
+    title: 'Web, mobile and infrastructure',
     description:
-      'AWS Certified Solutions Architect – Associate and AWS Certified Developer – Associate, with a BSc in Computer Science from the University of Lagos.',
+      'React and Next.js on the web, React Native and Expo on mobile, and AWS provisioned with Terraform underneath. BSc in Computer Science, University of Lagos.',
   },
 ];
 
@@ -32,25 +32,34 @@ const experience = [
     period: '2026',
     url: 'https://avant-techng.net/',
     description:
-      'Workforce and technology services company in Lagos covering recruitment, background checks, payroll, staff management and custom software. I built application screens for their customer experience platform, with row level security and audit trails for regulated industries.',
+      'Workforce and technology services company in Lagos covering recruitment, background checks, payroll, staff management and custom software. I built application screens for Avant One, their customer experience platform for regulated industries, working in React against PostgreSQL with row level security for tenant aware data access.',
+  },
+  {
+    company: 'PikaGroup',
+    role: 'Full Stack Software Engineer',
+    period: '2025 – 2026',
+    url: 'https://dev.gmps.be/platform/matches',
+    description:
+      'Peer to peer betting platform. I wrote the backend services and APIs in Go, built the Next.js web application for match browsing and betting, shipped mobile features with React Native and Expo, and provisioned the AWS infrastructure with Terraform.',
   },
   {
     company: 'Send24',
-    role: 'Frontend Engineer',
+    role: 'Frontend Software Engineer',
     period: 'Feb 2025 – Present',
     url: 'https://www.send24.co/',
     description:
-      'Same day delivery across all 36 states of Nigeria, with flat rate pricing, real time tracking, low cost hub drop offs, bulk shipping for enterprises and a vendor app. I work on the web platform covering quotes, hub search, booking and tracking.',
+      'Same day delivery across all 36 states of Nigeria, with customer, vendor and business applications for booking, tracking and delivery management. I build the Next.js platform: instant quotes, map based hub search, booking and tracking flows, and responsive business dashboards.',
   },
   {
     company: 'DevHeit',
-    role: 'Frontend Engineer',
-    period: '2024',
+    role: 'Frontend Software Engineer',
+    period: '2024 – 2026',
     url: 'https://ng.linkedin.com/company/devheit',
     description:
-      'Software development and IT consulting company building web and mobile solutions for businesses in the public and private sectors. I built scalable, secure web applications for client projects.',
+      'Software development and IT consulting company delivering web and mobile applications for businesses in the public and private sectors. I built scalable web applications for client projects, implementing frontend features and integrating them with backend APIs.',
   },
 ];
+
 
 export function About() {
   return (
@@ -60,7 +69,7 @@ export function About() {
           index="01"
           label="About"
           title="Full stack, mostly TypeScript."
-          lede="Principal Software Engineer with 3+ years building production web applications in JavaScript and TypeScript across logistics, workforce technology and client software."
+          lede="Software Engineer with 3+ years building production web applications in JavaScript and TypeScript across logistics, betting, workforce technology and client software, on web, mobile and cloud infrastructure."
         />
 
         <div className="mt-14 grid lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-20">
@@ -73,7 +82,9 @@ export function About() {
           >
             <p>
               My primary stack is TypeScript and JavaScript across React, Next.js,
-              Node.js and Express. Most of what I build comes down to the same
+              Node.js and Express. I also write backend services in Go, where I use
+              goroutines, channels and mutexes for concurrent work, and build mobile
+              applications with React Native and Expo. Most of what I build comes down to the same
               ingredients: backend APIs, database driven applications, real time
               features, dashboards, payment flows and the customer facing product on
               top of them.

@@ -7,14 +7,16 @@ import { useToast } from './ui/use-toast';
 
 const facts = [
   { value: '3+', label: 'Years shipping production systems' },
-  { value: '3', label: 'Companies across logistics, workforce tech and consulting' },
-  { value: '3', label: 'Live platforms in selected work' },
-  { value: '2', label: 'AWS Associate certifications' },
+  { value: '4', label: 'Companies across logistics, betting, workforce tech and consulting' },
+  { value: '4', label: 'Live platforms in selected work' },
+  { value: '3', label: 'Surfaces shipped: web, mobile and cloud infrastructure' },
 ];
 
 const focus = [
   'TypeScript',
+  'Go',
   'React and Next.js',
+  'React Native',
   'Node.js and Express',
   'PostgreSQL',
   'AWS',
@@ -74,9 +76,9 @@ export function Hero() {
             transition={{ duration: 0.55, delay: 0.12 }}
             className="mt-7 max-w-2xl text-lg md:text-xl leading-relaxed text-muted-foreground"
           >
-            Principal Software Engineer building production web applications in
-            JavaScript and TypeScript. I like owning a product from the database and
-            API through to the interface and the deployment that ships it.
+            Software Engineer building production web applications in
+            JavaScript, TypeScript and Go. I like owning a product from the database
+            and API through to the interface and the deployment that ships it.
           </motion.p>
 
           <motion.div
