@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { sendMail } from '@/lib/smtp';
 
 export async function POST(request: Request) {
   try {
@@ -13,33 +13,15 @@ export async function POST(request: Request) {
       );
     }
 
-    // Create a Nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_SERVER_USER,
-        pass: process.env.EMAIL_SERVER_PASSWORD,
-      },
-    });
-
-    // Email options
-    const mailOptions = {
-      from: `"${name}" <${process.env.EMAIL_FROM}>`,
-      to: process.env.EMAIL_TO,
-      replyTo: email,
+    // Send from my Gmail to my Gmail; the sender's details are in the body
+    await sendMail({
+      user: process.env.EMAIL_SERVER_USER!,
+      pass: process.env.EMAIL_SERVER_PASSWORD!,
+      from: process.env.EMAIL_FROM!,
+      to: process.env.EMAIL_TO!,
       subject: `New Contact Form Submission from ${name}`,
-      text: message,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
-    };
-
-    // Send the email
-    await transporter.sendMail(mailOptions);
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    });
 
     return NextResponse.json(
       { message: 'Message sent successfully!' },

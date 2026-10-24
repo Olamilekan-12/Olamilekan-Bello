@@ -1,27 +1,20 @@
 'use client';
 
-import { Hero } from '@/components/hero';
-import { About } from '@/components/about';
-import { Projects } from '@/components/projects';
-import { Skills } from '@/components/skills';
-import { Contact } from '@/components/contact';
-import { Footer } from '@/components/footer';
-import { Navigation } from '@/components/navigation';
-import { Toaster } from '@/components/ui/toaster';
+import { BookProvider, BookStage } from '@/components/book/book';
+import { Topbar } from '@/components/topbar';
+import { WriteToMe, Colophon } from '@/components/write-to-me';
 
 export default function Home() {
   return (
-    <>
-      <Navigation />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-      <Toaster />
-    </>
+    <BookProvider>
+      <div className="desk grain relative min-h-screen">
+        <Topbar />
+        <main>
+          <BookStage />
+          <WriteToMe />
+        </main>
+        <Colophon />
+      </div>
+    </BookProvider>
   );
 }
