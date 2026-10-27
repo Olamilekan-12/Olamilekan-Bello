@@ -14,7 +14,6 @@ export const person = {
   linkedin: 'https://www.linkedin.com/in/olamilekan-bello-3810b6275/',
   linkedinLabel: 'in/olamilekan-bello',
   cvPdf: '/bello-olamilekan-olayinka-cv.pdf',
-  cvDocx: '/bello-olamilekan-olayinka-cv.docx',
 };
 
 export const summary =

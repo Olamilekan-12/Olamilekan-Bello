@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import {
   MapPin, Phone, Mail, CalendarRange, Truck, Handshake, ShieldAlert, KeyRound, Webhook,
-  FileDown, FileText, Languages, ArrowUpRight, PenLine, Layers, ScrollText, Ruler,
+  FileDown, Languages, ArrowUpRight, PenLine, Layers, ScrollText, Ruler,
 } from 'lucide-react';
 import { SiGithub, FaLinkedinIn } from './brand-icons';
 import {
@@ -442,9 +442,6 @@ export function ColophonPage({ side, folio, head }: Ctx & { head: string }) {
         <div className="flex flex-wrap gap-[0.5em]">
           <a href={person.cvPdf} download="Bello_Olamilekan_CV.pdf" className="inline-flex items-center gap-[0.45em] rounded-full bg-ink px-[1em] py-[0.5em] text-[0.82em] text-paper transition-transform hover:-translate-y-px">
             <FileDown className="size-[1.1em]" aria-hidden="true" /> CV as PDF
-          </a>
-          <a href={person.cvDocx} download="Bello_Olamilekan_CV.docx" className="inline-flex items-center gap-[0.45em] rounded-full border border-ink/30 px-[1em] py-[0.5em] text-[0.82em] text-ink transition-colors hover:border-ink">
-            <FileText className="size-[1.1em]" aria-hidden="true" /> Word version
           </a>
         </div>
       </div>
