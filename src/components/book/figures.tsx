@@ -191,3 +191,49 @@ export function DeliveryJourneyFigure() {
     </FigureFrame>
   );
 }
+
+/* Keepsake: two ways to learn a payment succeeded, one place that marks it paid. */
+export function PaymentConfirmationFigure() {
+  return (
+    <FigureFrame caption="Fig. 8. The customer's return and Paystack's webhook can both arrive. Whichever reaches the guarded update first marks the order paid; the other changes nothing.">
+      <svg viewBox="0 0 300 160" className="block w-full" role="img" aria-label="Return page and webhook both confirming one Paystack payment exactly once">
+        <rect x="4" y="10" width="96" height="30" rx="4" fill="var(--paper)" stroke="var(--ink)" strokeWidth="0.9" />
+        <text x="52" y="23" textAnchor="middle" fontSize="7.4" fontFamily="var(--font-mono-face)" fill="var(--ink)">return page</text>
+        <text x="52" y="33" textAnchor="middle" fontSize="6" fontFamily="var(--font-mono-face)" fill="var(--ink-faint)">verify reference</text>
+
+        <rect x="4" y="74" width="96" height="30" rx="4" fill="var(--paper)" stroke="var(--ink)" strokeWidth="0.9" />
+        <text x="52" y="87" textAnchor="middle" fontSize="7.4" fontFamily="var(--font-mono-face)" fill="var(--ink)">webhook</text>
+        <text x="52" y="97" textAnchor="middle" fontSize="6" fontFamily="var(--font-mono-face)" fill="var(--ink-faint)">HMAC-SHA512 checked</text>
+
+        <path d="M100 25 C 124 25, 122 57, 140 57" fill="none" stroke="var(--ink-faint)" strokeWidth="0.9" />
+        <path d="M100 89 C 124 89, 122 57, 140 57" fill="none" stroke="var(--ink-faint)" strokeWidth="0.9" />
+
+        <rect x="140" y="38" width="96" height="38" rx="4" fill="var(--ink)" />
+        <text x="188" y="51" textAnchor="middle" fontSize="7.4" fontFamily="var(--font-mono-face)" fill="var(--paper)">fulfil order</text>
+        <text x="188" y="61" textAnchor="middle" fontSize="6" fontFamily="var(--font-mono-face)" fill="var(--foil)">amount + NGN match?</text>
+        <text x="188" y="70" textAnchor="middle" fontSize="6" fontFamily="var(--font-mono-face)" fill="var(--foil)">WHERE isPaid = false</text>
+
+        <path d="M236 50 L 245 50 L 245 28 L 250 28" fill="none" stroke="var(--moss)" strokeWidth="0.9" />
+        <rect x="250" y="16" width="48" height="24" rx="4" fill="var(--paper)" stroke="var(--moss)" strokeWidth="0.9" />
+        <text x="274" y="26" textAnchor="middle" fontSize="6.4" fontFamily="var(--font-mono-face)" fill="var(--moss)">paid +</text>
+        <text x="274" y="35" textAnchor="middle" fontSize="6.4" fontFamily="var(--font-mono-face)" fill="var(--moss)">1 email</text>
+
+        <path d="M236 66 L 245 66 L 245 88 L 250 88" fill="none" stroke="var(--ink-faint)" strokeWidth="0.9" strokeDasharray="3 2" />
+        <rect x="250" y="76" width="48" height="24" rx="4" fill="var(--paper)" stroke="var(--ink-faint)" strokeWidth="0.9" />
+        <text x="274" y="86" textAnchor="middle" fontSize="6.4" fontFamily="var(--font-mono-face)" fill="var(--ink-faint)">already</text>
+        <text x="274" y="95" textAnchor="middle" fontSize="6.4" fontFamily="var(--font-mono-face)" fill="var(--ink-faint)">paid: no-op</text>
+
+        <circle r="3.6" fill="var(--moss)" stroke="var(--paper)" strokeWidth="1">
+          <animateMotion dur="5s" repeatCount="indefinite" keyTimes="0;0.55;1" keyPoints="0;1;1" calcMode="linear" path="M100 25 C 124 25, 122 57, 140 57 L 236 50 L 252 50 L 252 28 L 258 28" />
+        </circle>
+        <circle r="3.6" fill="var(--vermilion)" stroke="var(--paper)" strokeWidth="1">
+          <animateMotion dur="5s" begin="0.9s" repeatCount="indefinite" keyTimes="0;0.55;1" keyPoints="0;1;1" calcMode="linear" path="M100 89 C 124 89, 122 57, 140 57 L 236 66 L 252 66 L 252 88 L 258 88" />
+        </circle>
+
+        <rect x="4" y="122" width="292" height="30" rx="4" fill="var(--paper)" stroke="var(--rule)" />
+        <text x="14" y="135" fontSize="6.4" fontFamily="var(--font-mono-face)" fill="var(--ink-soft)">price set on the server in kobo: base + material + finish</text>
+        <text x="14" y="145" fontSize="6.4" fontFamily="var(--font-mono-face)" fill="var(--ink-soft)">the client never decides what it is charged</text>
+      </svg>
+    </FigureFrame>
+  );
+}

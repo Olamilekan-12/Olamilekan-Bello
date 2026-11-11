@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import {
   MapPin, Phone, Mail, CalendarRange, Truck,
-  FileDown, Languages, ArrowUpRight, PenLine, Layers, ScrollText, Ruler, UtensilsCrossed, Lock,
+  FileDown, Languages, ArrowUpRight, PenLine, Layers, ScrollText, Ruler, UtensilsCrossed, Lock, Smartphone,
 } from 'lucide-react';
 import Image from 'next/image';
 import { SiGithub, FaLinkedinIn } from './brand-icons';
@@ -346,6 +346,7 @@ export function RoleWork({
 const projectIcons: Record<string, ReactNode> = {
   eatgo: <UtensilsCrossed />,
   send24: <Truck />,
+  keepsake: <Smartphone />,
 };
 
 /* A deployed project: its screenshot tipped in like a photographic plate, linked to the live app. */

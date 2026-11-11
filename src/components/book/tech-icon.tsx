@@ -6,7 +6,7 @@ import {
   SiTerraform, SiGithubactions, SiJest, SiPytest, SiK6, SiOpentelemetry, SiPrometheus, SiGrafana,
   SiSentry, SiScikitlearn, SiGooglemaps,
   FaAws, TbSql, VscAzure,
-  SiVite, SiStripe, SiAuth0, SiCloudinary, SiMongoose,
+  SiVite, SiStripe, SiAuth0, SiCloudinary, SiMongoose, SiPrisma, SiResend, SiNeon,
 } from './brand-icons';
 
 const icons: Record<string, IconType> = {
@@ -58,6 +58,9 @@ const icons: Record<string, IconType> = {
   Auth0: SiAuth0,
   Cloudinary: SiCloudinary,
   Mongoose: SiMongoose,
+  Prisma: SiPrisma,
+  Resend: SiResend,
+  Neon: SiNeon,
 };
 
 export function TechIcon({ name, className }: { name: string; className?: string }) {

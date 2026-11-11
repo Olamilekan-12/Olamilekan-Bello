@@ -7,7 +7,7 @@ import {
   CoverBoard, BackBoard, ContentsPage, SummaryPage, NumbersPage, SkillsPage, skillPages,
   RoleIntro, RoleWork, ProjectPage, ShowcasePage, ColophonPage, CorrespondencePage,
 } from './pages';
-import { DispatchFigure, OrderLifecycleFigure, DeliveryJourneyFigure } from './figures';
+import { DispatchFigure, OrderLifecycleFigure, DeliveryJourneyFigure, PaymentConfirmationFigure } from './figures';
 
 const ch = {
   contents: { id: 'contents', numeral: '', title: 'Contents' },
@@ -25,6 +25,7 @@ const roleFigures: Record<string, React.ReactNode> = {
 const projectFigures: Record<string, React.ReactNode> = {
   eatgo: <OrderLifecycleFigure />,
   send24: <DeliveryJourneyFigure />,
+  keepsake: <PaymentConfirmationFigure />,
 };
 
 const roleChapter: Record<string, Chapter> = { send24: ch.send24 };

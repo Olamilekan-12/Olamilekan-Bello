@@ -160,6 +160,27 @@ export const projects: Project[] = [
       '**Services underneath:** dispatch, tracking and settlement on PostgreSQL and PostGIS, serving more than 1,800 riders across Lagos, Abuja and Port Harcourt.',
     ],
   },
+  {
+    id: 'keepsake',
+    name: 'Keepsake',
+    tagline: 'Your photo on a one-of-one phone case',
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Neon', 'Paystack', 'Kinde', 'Cloudinary', 'Resend'],
+    live: {
+      url: 'https://keepsake-nine-tan.vercel.app/',
+      label: 'keepsake-nine-tan.vercel.app',
+      image: '/images/keepsake.png',
+      blurb:
+        'A custom phone case store. Customers upload a photo, position it on an iPhone case template, choose the model, material, finish and colour, and pay in naira through Paystack; every paid order lands in an admin dashboard for shipping.',
+    },
+    bullets: [
+      'Built the store on the **Next.js 14 App Router with Server Actions**, Prisma and PostgreSQL on Neon, and Kinde for sign-in.',
+      'Built the **case designer**: drag and resize a photo on the phone template with its aspect ratio locked, then **crop it on a canvas** to exactly the printable area and store it on Cloudinary.',
+      'Integrated **Paystack in naira**, pricing every case **on the server in kobo** from its material and finish, with a fresh reference for each payment attempt.',
+      'Confirmed payments **two ways**, from the return page and from an **HMAC-SHA512 signed webhook** compared in constant time, both feeding one fulfilment step.',
+      'Made fulfilment **exactly-once**: an order only flips to paid while it is still unpaid and when the amount and currency match the charge, so the **Resend** confirmation email goes out once.',
+      'Built an **admin dashboard** for moving orders from awaiting shipment to shipped and fulfilled.',
+    ],
+  },
 ];
 
 export const languages = [
