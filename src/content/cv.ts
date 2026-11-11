@@ -6,9 +6,9 @@ export const person = {
   title: 'Full-Stack Engineer',
   focus: ['Distributed Systems', 'Backend Architecture', 'Real-Time Applications'],
   location: 'Lagos, Nigeria',
-  phone: '+234 905 863 7198',
-  phoneHref: 'tel:+2349058637198',
-  email: 'belloolamilekan661@gmail.com',
+  phone: '+234 901 761 2901',
+  phoneHref: 'tel:+2349017612901',
+  email: 'belloolamilekan166@gmail.com',
   github: 'https://github.com/Olamilekan-12',
   githubLabel: 'github.com/Olamilekan-12',
   linkedin: 'https://www.linkedin.com/in/olamilekan-bello-3810b6275/',
@@ -17,16 +17,16 @@ export const person = {
 };
 
 export const summary =
-  'Full-Stack Engineer experienced in designing, building, and operating scalable web and mobile applications, distributed backend services, and real-time transaction platforms. Proficient in Go, TypeScript, C#, Java, React, PostgreSQL, Redis, Apache Kafka, and Kubernetes, with experience spanning system architecture, API development, database design, event-driven processing, cloud infrastructure, and production observability.';
+  'Full-Stack Engineer experienced in designing, building, and operating scalable web and mobile applications, distributed backend services, and real-time transaction platforms. Proficient in Go, TypeScript, React, Next.js, Node.js, Express, PostgreSQL, Redis, Apache Kafka, and Kubernetes, with experience spanning system architecture, API development, database design, event-driven processing, cloud infrastructure, and production observability.';
 
 export const summaryClose =
   'Delivered solutions across last-mile logistics, financial transaction processing, and fraud detection, with a focus on performance, reliability, data consistency, and measurable business outcomes. Experienced in technical leadership, architecture reviews, code quality, and mentoring engineers.';
 
 export const headlineStats = [
-  { value: '250K+', label: 'registered users on wagering, wallet and payment systems' },
-  { value: '3M+', label: 'bet settlements with no recorded balance discrepancies' },
   { value: '1,800+', label: 'riders dispatched across Lagos, Abuja and Port Harcourt' },
-  { value: '<30 ms', label: 'to pair opposing bets in the Go matching engine' },
+  { value: '<1 min', label: 'to assign a rider, down from about nine' },
+  { value: '55%', label: 'fewer order-status tickets after live tracking' },
+  { value: '4', label: 'surfaces: customer and rider apps, merchant dashboard, dispatch centre' },
 ];
 
 export const domains = ['Last-mile logistics', 'Financial transactions', 'Fraud detection'];
@@ -34,14 +34,14 @@ export const domains = ['Last-mile logistics', 'Financial transactions', 'Fraud 
 export type SkillGroup = { name: string; items: string[] };
 
 export const skills: SkillGroup[] = [
-  { name: 'Programming Languages', items: ['Go', 'TypeScript', 'JavaScript', 'C#', 'Java', 'Python', 'SQL'] },
+  { name: 'Programming Languages', items: ['Go', 'TypeScript', 'JavaScript', 'Python', 'SQL'] },
   {
     name: 'Frontend & Mobile',
-    items: ['Angular', 'React', 'Next.js', 'React Native', 'Redux Toolkit', 'Zustand', 'React Query', 'Tailwind CSS', 'shadcn/ui'],
+    items: ['React', 'Next.js', 'React Native', 'Redux Toolkit', 'Zustand', 'React Query', 'Tailwind CSS', 'shadcn/ui', 'Angular'],
   },
   {
     name: 'Backend & API',
-    items: ['Node.js', 'NestJS', 'Express', 'ASP.NET Core', 'Spring Boot', 'Gin', 'FastAPI', 'Django', 'REST APIs', 'WebSockets', 'SignalR'],
+    items: ['Node.js', 'Express', 'Gin', 'NestJS', 'FastAPI', 'Django', 'REST APIs', 'WebSockets'],
   },
   {
     name: 'Databases & Messaging',
@@ -57,7 +57,7 @@ export const skills: SkillGroup[] = [
   },
   {
     name: 'Testing & Observability',
-    items: ['Jest', 'Playwright', 'xUnit', 'Pytest', 'k6', 'OpenTelemetry', 'Prometheus', 'Grafana', 'Sentry', 'Automated Testing', 'Performance Testing'],
+    items: ['Jest', 'Playwright', 'Pytest', 'k6', 'OpenTelemetry', 'Prometheus', 'Grafana', 'Sentry', 'Automated Testing', 'Performance Testing'],
   },
   {
     name: 'Engineering Practices',
@@ -87,7 +87,7 @@ export const roles: Role[] = [
     org: 'NQB8',
     role: 'Full-Stack Engineer',
     location: 'Lagos, Nigeria',
-    period: 'Feb 2025 to Oct 2026',
+    period: '2023 to present',
     blurb:
       'A last-mile delivery platform made up of customer and rider applications, a merchant dashboard, and a dispatch control centre.',
     metrics: [
@@ -96,63 +96,15 @@ export const roles: Role[] = [
       { value: '55%', label: 'fewer status tickets' },
     ],
     bullets: [
-      'Designed and developed **dispatch, tracking, and settlement services** using ASP.NET Core, Spring Boot, PostgreSQL, and PostGIS, supporting a network of more than 1,800 riders across Lagos, Abuja, and Port Harcourt.',
+      'Designed and developed **dispatch, tracking, and settlement services** using PostgreSQL and PostGIS, supporting a network of more than 1,800 riders across Lagos, Abuja, and Port Harcourt.',
       'Engineered an **automated rider-dispatch engine** using Redis geospatial queries, reducing rider assignment time from approximately nine minutes to under one minute.',
-      'Implemented **real-time order tracking** using SignalR and Google Maps, contributing to a 55% reduction in order-status support tickets and improving delivery visibility for customers and merchants.',
+      'Implemented **real-time order tracking** using WebSockets and Google Maps, contributing to a 55% reduction in order-status support tickets and improving delivery visibility for customers and merchants.',
       'Developed an **offline-first React Native rider application** with background synchronization and resilient status updates, maintaining delivery data accuracy in areas with unreliable network connectivity.',
       'Implemented **OTP verification and photo-based proof of delivery** to strengthen delivery accountability, improve auditability, and support dispute resolution.',
       'Automated **cash-on-delivery reconciliation** and settlement workflows, improving transaction traceability and reducing manual reconciliation overhead.',
       'Integrated application and backend workflows across **order creation, dispatch, delivery confirmation, and settlement** to support reliable end-to-end delivery operations.',
     ],
-    stack: ['ASP.NET Core', 'Spring Boot', 'PostgreSQL', 'PostGIS', 'Redis', 'SignalR', 'Google Maps', 'React Native'],
-  },
-  {
-    id: 'gmp',
-    company: 'GMP',
-    org: 'PikaGroup',
-    role: 'Full-Stack Engineer',
-    location: 'Lagos, Nigeria',
-    period: 'Jan 2023 to Jan 2025',
-    blurb:
-      'A peer-to-peer sports wagering platform supporting bet creation, matching, escrow-based wallet operations, and automated settlement.',
-    metrics: [
-      { value: '250K+', label: 'registered users' },
-      { value: '<30 ms', label: 'bet matching' },
-      { value: '40K+', label: 'concurrent users at peak' },
-    ],
-    bullets: [
-      '**Led a squad of six engineers** responsible for wagering, wallet, and payment systems serving more than 250,000 registered users; conducted technical interviews and mentored three engineers.',
-      'Designed a **Go-based wager-matching engine** that paired opposing bets in under 30 milliseconds, supporting partial matches, concurrent requests, and automated refunds.',
-      'Architected an **escrow wallet backed by a double-entry ledger** and idempotent Kafka event processing, supporting more than three million bet settlements without recorded balance discrepancies.',
-      'Prepared the platform for **peak sporting events** through Kubernetes autoscaling, Redis caching, and k6 load testing, supporting more than 40,000 concurrent users during high-demand periods.',
-      'Automated **bet settlement using live sports data feeds**, reducing manual intervention and settlement delays following match completion.',
-      'Implemented **KYC verification, responsible-gaming controls, and audit reporting** to support regulatory compliance and review by the Lagos State Lotteries and Gaming Authority.',
-      'Contributed to **system architecture, API design, code reviews**, and production reliability improvements across core transaction services.',
-    ],
-    stack: ['Go', 'Apache Kafka', 'PostgreSQL', 'Redis', 'Kubernetes', 'k6'],
-  },
-  {
-    id: 'devheit',
-    company: 'Devheit',
-    org: 'Fraud Detection',
-    role: 'Freelance Full-Stack Engineer',
-    location: 'Remote',
-    period: '2024 to 2026',
-    blurb:
-      'Contract engagement building fraud detection services (Just Rever) and analyst tooling for transaction-intensive products.',
-    metrics: [
-      { value: 'Real time', label: 'transaction risk scoring' },
-      { value: 'Rules + ML', label: 'configurable engine with scikit-learn' },
-    ],
-    bullets: [
-      'Built a **real-time fraud-scoring service** using Python and FastAPI, combining a configurable rules engine with a scikit-learn model to evaluate transaction risk.',
-      'Developed a **React and TypeScript dashboard** for reviewing flagged transactions, recording analyst decisions, and collecting feedback to support model improvement and retraining.',
-      'Implemented **detection workflows** for account takeover, device and IP velocity anomalies, and linked-account activity, using Redis for low-latency feature lookups.',
-      'Containerized services with **Docker** and automated build and deployment workflows using **GitHub Actions**, improving deployment consistency and maintainability.',
-      'Integrated **Prometheus monitoring and alerting** for scoring latency and model drift to improve operational visibility and support timely investigation.',
-      'Delivered integrated **backend APIs, data-processing workflows, and frontend investigation tools** for fraud analysis.',
-    ],
-    stack: ['Python', 'FastAPI', 'scikit-learn', 'React', 'TypeScript', 'Redis', 'Docker', 'GitHub Actions', 'Prometheus'],
+    stack: ['PostgreSQL', 'PostGIS', 'Redis', 'WebSockets', 'Google Maps', 'React Native'],
   },
 ];
 
@@ -162,32 +114,50 @@ export type Project = {
   tagline: string;
   stack: string[];
   bullets: string[];
+  /** Deployed projects get a showcase page with a screenshot and a live link. */
+  live?: { url: string; label: string; image: string; blurb: string };
 };
 
 export const projects: Project[] = [
   {
-    id: 'idempotency',
-    name: 'Idempotency Middleware',
-    tagline: 'for payment APIs',
-    stack: ['Go', 'Node.js', 'Redis', 'PostgreSQL'],
+    id: 'eatgo',
+    name: 'EatGo',
+    tagline: 'Nigerian meals, delivered fast',
+    stack: ['React', 'TypeScript', 'Vite', 'Node.js', 'Express', 'MongoDB', 'Mongoose', 'Stripe', 'Auth0', 'Cloudinary', 'Tailwind CSS'],
+    live: {
+      url: 'https://eatgo-client.vercel.app/',
+      label: 'eatgo-client.vercel.app',
+      image: '/images/eatgo.png',
+      blurb:
+        'A full-stack food ordering platform for Nigerian restaurants. Diners search by city, restaurant or cuisine, pay through Stripe and follow their order live; restaurant owners manage their menu and move incoming orders through to delivery.',
+    },
     bullets: [
-      'Designed **reusable idempotency middleware** for Go and Node.js applications, supporting integration with net/http, Gin, Express, and NestJS.',
-      'Implemented **idempotency keys and request fingerprinting** to identify duplicate requests and protect payment and transfer endpoints against unintended repeated processing.',
-      'Used **Redis-based coordination and PostgreSQL persistence** to support request deduplication and durable idempotency records.',
-      'Structured the middleware for transaction-sensitive APIs requiring **safe retries**, predictable request handling, and consistent processing outcomes.',
+      'Built the **React and TypeScript frontend** and the **Express, MongoDB and Mongoose API** behind it, with Auth0 sign-in and JWT validation on every protected route.',
+      'Integrated **Stripe Checkout in naira**, pricing every line item on the server from the restaurant menu, with a **signature-verified webhook** that marks orders as paid.',
+      'Modelled an **order lifecycle** from placed and paid through in progress, out for delivery and delivered, with the customer order page **polling for status every five seconds**.',
+      'Wrote a **background job that auto-cancels ignored orders** once the estimated delivery time passes, filtered on status so it cannot race a restaurant confirming, and guarded so a late payment never revives a cancelled order.',
+      'Built **restaurant search** by city, name or cuisine with cuisine filters, sorting and pagination, **escaping user input** before it reaches MongoDB regex queries.',
+      'Built a **restaurant dashboard** for managing details, menus and **Cloudinary image uploads**, and for updating the status of incoming orders.',
     ],
   },
   {
-    id: 'webhook-relay',
-    name: 'Webhook Relay',
-    tagline: 'for Nigerian payment gateways',
-    stack: ['Go', 'Apache Kafka', 'PostgreSQL', 'Docker'],
+    id: 'send24',
+    name: 'Send24',
+    tagline: 'Same-day delivery across Nigeria',
+    stack: ['React Native', 'PostgreSQL', 'PostGIS', 'Redis', 'WebSockets', 'Google Maps'],
+    live: {
+      url: 'https://www.send24.co/',
+      label: 'send24.co',
+      image: '/images/send24.png',
+      blurb:
+        'A last-mile delivery platform. Senders book and track parcels, vendors ship on subscription plans, enterprises upload bulk orders from a spreadsheet and partner stores double as drop-off and pickup hubs, with riders, merchants and a dispatch control centre working from the same data.',
+    },
     bullets: [
-      'Designed a **self-hosted webhook relay** for Paystack, Flutterwave, and Monnify integrations, centralizing payment event ingestion and distribution.',
-      'Implemented **webhook signature verification and event deduplication** to validate incoming events and reduce duplicate processing.',
-      'Designed **asynchronous event distribution with Kafka**, retry handling, and dead-letter queues to improve resilience when downstream services become unavailable.',
-      'Incorporated **event recovery and replay** workflows to support troubleshooting and controlled reprocessing of failed webhook deliveries.',
-      'Structured the service around **containerized deployment** and persistent event records to improve maintainability and operational visibility.',
+      '**Dispatch control centre:** an automated rider-dispatch engine on Redis geospatial queries, cutting rider assignment from about nine minutes to under one.',
+      '**Customers and merchants:** real-time order tracking over WebSockets and Google Maps, behind a 55% drop in order-status support tickets.',
+      '**Rider app:** an offline-first React Native app with background sync, OTP verification and photo proof of delivery, accurate even on unreliable networks.',
+      '**Settlement:** automated cash-on-delivery reconciliation, so every naira collected at the door is traceable back to its order.',
+      '**Services underneath:** dispatch, tracking and settlement on PostgreSQL and PostGIS, serving more than 1,800 riders across Lagos, Abuja and Port Harcourt.',
     ],
   },
 ];

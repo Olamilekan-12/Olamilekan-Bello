@@ -35,18 +35,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <title>Bello Olamilekan | Full-Stack Engineer</title>
-        <meta name="description" content="Full-Stack Engineer in Lagos building distributed backend services and real-time platforms in Go, TypeScript, C# and Java, with Kafka, Kubernetes, PostgreSQL and Redis." />
-        <meta name="keywords" content="Full-Stack Engineer, Distributed Systems, Backend Architecture, Real-Time Applications, Go, TypeScript, C#, Java, React, Next.js, React Native, Node.js, NestJS, ASP.NET Core, Spring Boot, PostgreSQL, PostGIS, Redis, Apache Kafka, Kubernetes, Terraform, AWS, Azure, Lagos, Nigeria" />
+        <meta name="description" content="Full-Stack Engineer in Lagos building distributed backend services and real-time platforms in Go and TypeScript, with React, Next.js, Node.js, Express, Kafka, Kubernetes, PostgreSQL and Redis." />
+        <meta name="keywords" content="Full-Stack Engineer, Distributed Systems, Backend Architecture, Real-Time Applications, Go, TypeScript, React, Next.js, React Native, Node.js, Express, NestJS, PostgreSQL, PostGIS, Redis, Apache Kafka, Kubernetes, Terraform, AWS, Azure, Lagos, Nigeria" />
         <meta name="author" content="Bello Olamilekan Olayinka" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:url" content="https://olamilekan-bello.vercel.app" />
         <meta property="og:title" content="Bello Olamilekan | Full-Stack Engineer" />
-        <meta property="og:description" content="Full-Stack Engineer in Lagos building distributed backend services and real-time platforms in Go, TypeScript, C# and Java, with Kafka, Kubernetes, PostgreSQL and Redis." />
+        <meta property="og:description" content="Full-Stack Engineer in Lagos building distributed backend services and real-time platforms in Go and TypeScript, with React, Next.js, Node.js, Express, Kafka, Kubernetes, PostgreSQL and Redis." />
         <meta property="og:site_name" content="Bello Olamilekan" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Bello Olamilekan | Full-Stack Engineer" />
-        <meta name="twitter:description" content="Full-Stack Engineer in Lagos building distributed backend services and real-time platforms in Go, TypeScript, C# and Java, with Kafka, Kubernetes, PostgreSQL and Redis." />
+        <meta name="twitter:description" content="Full-Stack Engineer in Lagos building distributed backend services and real-time platforms in Go and TypeScript, with React, Next.js, Node.js, Express, Kafka, Kubernetes, PostgreSQL and Redis." />
         <meta name="twitter:creator" content="@bello_olamilekan" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#e6dfd2" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#15120f" />

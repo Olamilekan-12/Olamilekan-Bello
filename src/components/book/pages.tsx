@@ -2,9 +2,10 @@
 
 import type { ReactNode } from 'react';
 import {
-  MapPin, Phone, Mail, CalendarRange, Truck, Handshake, ShieldAlert, KeyRound, Webhook,
-  FileDown, Languages, ArrowUpRight, PenLine, Layers, ScrollText, Ruler,
+  MapPin, Phone, Mail, CalendarRange, Truck,
+  FileDown, Languages, ArrowUpRight, PenLine, Layers, ScrollText, Ruler, UtensilsCrossed, Lock,
 } from 'lucide-react';
+import Image from 'next/image';
 import { SiGithub, FaLinkedinIn } from './brand-icons';
 import {
   person, summary, summaryClose, headlineStats, domains, skills, languages,
@@ -79,7 +80,7 @@ export function BackBoard({ side }: { side: Side }) {
           “{summaryClose}”
         </p>
         <div className="mt-[5cqh] flex flex-wrap gap-x-[2.4cqw] gap-y-[1.4cqh] text-[2.7cqw] smallcaps text-foil/70">
-          {['Go', 'TypeScript', 'C#', 'Java', 'Kafka', 'Kubernetes', 'PostgreSQL', 'Redis'].map((s) => (
+          {['Go', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Kafka', 'Kubernetes', 'PostgreSQL'].map((s) => (
             <span key={s}>{s}</span>
           ))}
         </div>
@@ -176,7 +177,7 @@ function ContactLine({ icon, text, href }: { icon: ReactNode; text: string; href
 export function SummaryPage({ side, folio, head, withNumbers }: Ctx & { head: string; withNumbers: boolean }) {
   return (
     <Paper side={side} folio={folio} head={head}>
-      <ChapterHead numeral="I" kicker="Professional summary" title={<>Systems that hold up <span className="italic text-vermilion">under load.</span></>} icon={<ScrollText />} />
+      <ChapterHead numeral="I" kicker="Professional summary" title={<>Built for <span className="italic text-vermilion">the last mile.</span></>} icon={<ScrollText />} />
       <p className="drop-cap mt-[1em] text-[1.02em] leading-[1.55] text-ink-soft hyphens-auto">{summary}</p>
       <p className="mt-[0.7em] text-[1.02em] leading-[1.55] text-ink-soft hyphens-auto">{summaryClose}</p>
       {withNumbers && (
@@ -270,8 +271,6 @@ export const skillPages = {
 
 const roleIcons: Record<string, ReactNode> = {
   send24: <Truck />,
-  gmp: <Handshake />,
-  devheit: <ShieldAlert />,
 };
 
 export function RoleIntro({
@@ -345,17 +344,95 @@ export function RoleWork({
 /* ---------- Projects ---------- */
 
 const projectIcons: Record<string, ReactNode> = {
-  idempotency: <KeyRound />,
-  'webhook-relay': <Webhook />,
+  eatgo: <UtensilsCrossed />,
+  send24: <Truck />,
 };
+
+/* A deployed project: its screenshot tipped in like a photographic plate, linked to the live app. */
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+
+export function ShowcasePage({
+  side, folio, head, project, opener, plate,
+}: Ctx & { head: string; project: Project; opener: boolean; plate: number }) {
+  const live = project.live!;
+  const corner = 'pointer-events-none absolute size-[1.6em] bg-ink/80';
+  return (
+    <Paper side={side} folio={folio} head={head}>
+      {opener ? (
+        <ChapterHead numeral="IV" kicker="Selected projects" title={project.name} icon={projectIcons[project.id]} />
+      ) : (
+        <h2 className="font-display text-[2.15em] leading-[1.02] font-medium tracking-[-0.015em] text-ink">{project.name}</h2>
+      )}
+      <p className="mt-[0.2em] font-display text-[1.1em] italic text-ink-soft">{project.tagline}</p>
+
+      <a
+        href={live.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Open ${project.name}, live at ${live.label}`}
+        className="group relative mx-[0.5em] mt-[1.1em] block shrink-0 -rotate-[0.8deg] transition-transform duration-500 hover:rotate-0"
+      >
+        <div className="overflow-hidden rounded-[0.4em] border border-ink/15 bg-white shadow-[0_14px_28px_-16px_rgba(30,20,8,0.55),0_2px_5px_rgba(30,20,8,0.12)]">
+          <div className="flex items-center gap-[0.45em] border-b border-ink/10 bg-[#efe9dd] px-[0.7em] py-[0.42em]">
+            <span className="size-[0.55em] rounded-full bg-[#e0614a]" />
+            <span className="size-[0.55em] rounded-full bg-[#e3b34b]" />
+            <span className="size-[0.55em] rounded-full bg-[#6cc08b]" />
+            <span className="mx-auto flex min-w-0 items-center gap-[0.35em] rounded-full bg-white/80 px-[0.8em] py-[0.12em] font-mono text-[0.6em] text-ink-soft">
+              <Lock className="size-[1em] shrink-0" aria-hidden="true" />
+              <span className="truncate">{live.label}</span>
+            </span>
+          </div>
+          <div className="relative aspect-[1908/994] w-full">
+            <Image src={live.image} alt={`${project.name} home page`} fill sizes="(max-width: 1000px) 92vw, 42vw" className="object-cover object-top" />
+          </div>
+        </div>
+        {/* photo corners holding the plate onto the page */}
+        <span className={`${corner} -top-[0.35em] -left-[0.35em] [clip-path:polygon(0_0,100%_0,0_100%)]`} />
+        <span className={`${corner} -top-[0.35em] -right-[0.35em] [clip-path:polygon(0_0,100%_0,100%_100%)]`} />
+        <span className={`${corner} -bottom-[0.35em] -left-[0.35em] [clip-path:polygon(0_0,0_100%,100%_100%)]`} />
+        <span className={`${corner} -right-[0.35em] -bottom-[0.35em] [clip-path:polygon(100%_0,100%_100%,0_100%)]`} />
+      </a>
+      <p className="plate-caption mt-[0.7em] text-center text-[0.68em] italic text-ink-faint">
+        Plate {ROMAN[plate - 1] ?? plate}. The {project.name} home page, live in production.
+      </p>
+
+      <p className="mt-[0.9em] text-[0.92em] leading-[1.5] text-ink-soft hyphens-auto">{live.blurb}</p>
+      <ul className="mt-[0.8em] flex flex-wrap gap-[0.36em]">
+        {project.stack.map((s) => (
+          <li key={s} className="ink-chip">
+            <TechIcon name={s} className="size-[1.05em] text-ink" />
+            {s}
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-auto flex flex-wrap items-center justify-between gap-[0.6em] pt-[0.9em]">
+        <a
+          href={live.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-[0.45em] rounded-full bg-ink px-[1em] py-[0.5em] text-[0.82em] text-paper transition-transform hover:-translate-y-px"
+        >
+          Open the live app <ArrowUpRight className="size-[1.05em]" aria-hidden="true" />
+        </a>
+        <span className="font-mono text-[0.66em] text-ink-faint">{live.label}</span>
+      </div>
+    </Paper>
+  );
+}
 
 export function ProjectPage({
   side, folio, head, project, figure, part, opener,
 }: Ctx & { head: string; project: Project; figure: ReactNode; part: 'all' | 'text' | 'figure'; opener: boolean }) {
-  const header = (
+  const header = project.live ? (
+    <div className="flex shrink-0 items-baseline justify-between">
+      <h3 className="font-display text-[1.3em] font-medium text-ink">What I built</h3>
+      <span className="font-mono text-[0.66em] text-ink-faint">{project.name}</span>
+    </div>
+  ) : (
     <>
       {opener ? (
-        <ChapterHead numeral="VI" kicker="Selected projects" title={project.name} icon={projectIcons[project.id]} />
+        <ChapterHead numeral="IV" kicker="Selected projects" title={project.name} icon={projectIcons[project.id]} />
       ) : (
         <header className="flex shrink-0 items-start justify-between gap-[0.6em]">
           <h2 className="font-display text-[2.15em] leading-[1.02] font-medium tracking-[-0.015em] text-ink">{project.name}</h2>
@@ -412,7 +489,7 @@ const principles = [
 export function ColophonPage({ side, folio, head }: Ctx & { head: string }) {
   return (
     <Paper side={side} folio={folio} head={head}>
-      <ChapterHead numeral="VII" kicker="Colophon" title={<>How this engineer <span className="italic">works.</span></>} icon={<Layers />} />
+      <ChapterHead numeral="V" kicker="Colophon" title={<>How this engineer <span className="italic">works.</span></>} icon={<Layers />} />
       <dl className="mt-[1em] space-y-[0.7em]">
         {principles.map((p) => (
           <div key={p.title} className="grid grid-cols-[7.4em_1fr] gap-[0.8em] border-b border-[var(--rule)] pb-[0.7em] text-[0.95em]">

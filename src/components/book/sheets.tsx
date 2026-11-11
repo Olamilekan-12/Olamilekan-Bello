@@ -5,30 +5,29 @@ import type { Chapter, Sheet } from './context';
 import type { Side } from './paper';
 import {
   CoverBoard, BackBoard, ContentsPage, SummaryPage, NumbersPage, SkillsPage, skillPages,
-  RoleIntro, RoleWork, ProjectPage, ColophonPage, CorrespondencePage,
+  RoleIntro, RoleWork, ProjectPage, ShowcasePage, ColophonPage, CorrespondencePage,
 } from './pages';
-import { DispatchFigure, MatchingFigure, FraudFigure, IdempotencyFigure, RelayFigure } from './figures';
+import { DispatchFigure, OrderLifecycleFigure, DeliveryJourneyFigure } from './figures';
 
 const ch = {
   contents: { id: 'contents', numeral: '', title: 'Contents' },
   summary: { id: 'summary', numeral: 'I', title: 'Summary' },
   toolkit: { id: 'toolkit', numeral: 'II', title: 'Toolkit' },
   send24: { id: 'send24', numeral: 'III', title: 'Send24' },
-  gmp: { id: 'gmp', numeral: 'IV', title: 'GMP, PikaGroup' },
-  devheit: { id: 'devheit', numeral: 'V', title: 'Devheit' },
-  projects: { id: 'projects', numeral: 'VI', title: 'Selected projects' },
-  colophon: { id: 'colophon', numeral: 'VII', title: 'Colophon' },
+  projects: { id: 'projects', numeral: 'IV', title: 'Selected projects' },
+  colophon: { id: 'colophon', numeral: 'V', title: 'Colophon' },
 } satisfies Record<string, Chapter>;
 
-const figures: Record<string, React.ReactNode> = {
+const roleFigures: Record<string, React.ReactNode> = {
   send24: <DispatchFigure />,
-  gmp: <MatchingFigure />,
-  devheit: <FraudFigure />,
-  idempotency: <IdempotencyFigure />,
-  'webhook-relay': <RelayFigure />,
 };
 
-const roleChapter: Record<string, Chapter> = { send24: ch.send24, gmp: ch.gmp, devheit: ch.devheit };
+const projectFigures: Record<string, React.ReactNode> = {
+  eatgo: <OrderLifecycleFigure />,
+  send24: <DeliveryJourneyFigure />,
+};
+
+const roleChapter: Record<string, Chapter> = { send24: ch.send24 };
 
 /** Running head: the author on left pages, the chapter on right pages, as in a printed book. */
 function headFor(side: Side, chapter: Chapter) {
@@ -75,7 +74,7 @@ export function buildSheets(compact: boolean): Sheet[] {
     const chapter = roleChapter[role.id];
     sheets.push(
       paper(`${role.id}-intro`, chapter, (side, folio, head) => (
-        <RoleIntro side={side} folio={folio} head={head} role={role} numeral={chapter.numeral} figure={figures[role.id]} />
+        <RoleIntro side={side} folio={folio} head={head} role={role} numeral={chapter.numeral} figure={roleFigures[role.id]} />
       )),
     );
     const n = role.bullets.length;
@@ -90,11 +89,19 @@ export function buildSheets(compact: boolean): Sheet[] {
   });
 
   projects.forEach((project, i) => {
+    // A deployed project opens with its screenshot, then its build notes; spreads stay paired.
+    if (project.live) {
+      sheets.push(
+        paper(`${project.id}-showcase`, ch.projects, (side, folio, head) => (
+          <ShowcasePage side={side} folio={folio} head={head} project={project} opener={i === 0} plate={projects.slice(0, i + 1).filter((p) => p.live).length} />
+        )),
+      );
+    }
     const parts = compact ? (['text', 'figure'] as const) : (['all'] as const);
     parts.forEach((part) =>
       sheets.push(
         paper(`${project.id}-${part}`, ch.projects, (side, folio, head) => (
-          <ProjectPage side={side} folio={folio} head={head} project={project} figure={figures[project.id]} part={part} opener={i === 0} />
+          <ProjectPage side={side} folio={folio} head={head} project={project} figure={projectFigures[project.id]} part={part} opener={i === 0 && !project.live} />
         )),
       ),
     );

@@ -4,16 +4,15 @@ import {
   SiReactquery, SiTailwindcss, SiShadcnui, SiNodedotjs, SiNestjs, SiExpress, SiGin, SiFastapi,
   SiDjango, SiPostgresql, SiMongodb, SiRedis, SiApachekafka, SiRabbitmq, SiDocker, SiKubernetes,
   SiTerraform, SiGithubactions, SiJest, SiPytest, SiK6, SiOpentelemetry, SiPrometheus, SiGrafana,
-  SiSentry, SiScikitlearn, SiDotnet, SiSpringboot, SiGooglemaps,
-  FaAws, FaJava, TbBrandCSharp, TbSql, VscAzure,
+  SiSentry, SiScikitlearn, SiGooglemaps,
+  FaAws, TbSql, VscAzure,
+  SiVite, SiStripe, SiAuth0, SiCloudinary, SiMongoose,
 } from './brand-icons';
 
 const icons: Record<string, IconType> = {
   Go: SiGo,
   TypeScript: SiTypescript,
   JavaScript: SiJavascript,
-  'C#': TbBrandCSharp,
-  Java: FaJava,
   Python: SiPython,
   SQL: TbSql,
   Angular: SiAngular,
@@ -27,8 +26,6 @@ const icons: Record<string, IconType> = {
   'Node.js': SiNodedotjs,
   NestJS: SiNestjs,
   Express: SiExpress,
-  'ASP.NET Core': SiDotnet,
-  'Spring Boot': SiSpringboot,
   Gin: SiGin,
   FastAPI: SiFastapi,
   Django: SiDjango,
@@ -56,6 +53,11 @@ const icons: Record<string, IconType> = {
   Sentry: SiSentry,
   'scikit-learn': SiScikitlearn,
   'Google Maps': SiGooglemaps,
+  Vite: SiVite,
+  Stripe: SiStripe,
+  Auth0: SiAuth0,
+  Cloudinary: SiCloudinary,
+  Mongoose: SiMongoose,
 };
 
 export function TechIcon({ name, className }: { name: string; className?: string }) {
