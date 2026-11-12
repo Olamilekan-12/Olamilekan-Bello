@@ -105,7 +105,7 @@ export function OrderLifecycleFigure() {
     { x: 280, label: 'delivered' },
   ];
   return (
-    <FigureFrame caption="Fig. 6. Stripe's webhook marks an order paid, the restaurant moves it on from there, and a job cancels any order left waiting past the delivery estimate.">
+    <FigureFrame caption="Fig. 3. Stripe's webhook marks an order paid, the restaurant moves it on from there, and a job cancels any order left waiting past the delivery estimate.">
       <svg viewBox="0 0 300 150" className="block w-full" role="img" aria-label="Order lifecycle from placed to delivered, with ignored orders cancelled">
         <g>
           <rect x="44" y="4" width="76" height="20" rx="4" fill="var(--paper)" stroke="var(--ink)" strokeWidth="0.9" />
@@ -158,7 +158,7 @@ export function DeliveryJourneyFigure() {
     { x: 268, label: 'delivered', note: 'OTP + photo' },
   ];
   return (
-    <FigureFrame caption="Fig. 7. Every parcel moves through the same five checkpoints, each one recorded, and a cash-on-delivery order only closes once the money collected is reconciled.">
+    <FigureFrame caption="Fig. 4. Every parcel moves through the same five checkpoints, each one recorded, and a cash-on-delivery order only closes once the money collected is reconciled.">
       <svg viewBox="0 0 300 150" className="block w-full" role="img" aria-label="Parcel journey from booking to delivery and cash settlement">
         <path d="M32 54 C 66 30, 114 78, 152 54 S 234 30, 268 54" fill="none" stroke="var(--ink-faint)" strokeWidth="1" strokeDasharray="3 2.5" />
         {stops.map((s, i) => {
@@ -195,7 +195,7 @@ export function DeliveryJourneyFigure() {
 /* Keepsake: two ways to learn a payment succeeded, one place that marks it paid. */
 export function PaymentConfirmationFigure() {
   return (
-    <FigureFrame caption="Fig. 8. The customer's return and Paystack's webhook can both arrive. Whichever reaches the guarded update first marks the order paid; the other changes nothing.">
+    <FigureFrame caption="Fig. 2. The customer's return and Paystack's webhook can both arrive. Whichever reaches the guarded update first marks the order paid; the other changes nothing.">
       <svg viewBox="0 0 300 160" className="block w-full" role="img" aria-label="Return page and webhook both confirming one Paystack payment exactly once">
         <rect x="4" y="10" width="96" height="30" rx="4" fill="var(--paper)" stroke="var(--ink)" strokeWidth="0.9" />
         <text x="52" y="23" textAnchor="middle" fontSize="7.4" fontFamily="var(--font-mono-face)" fill="var(--ink)">return page</text>
